@@ -1,0 +1,7 @@
+============================================================= Binding data WPF (Basic) ===========================================
+- Binding lên view có 1 cách còn binding ở model thì nhiều cách
+- Oneway: Dữ liệu 1 chiều từ nguồn qua còn không biết chiều ngược lại
+- Twoway(default): Dữ liệu 2 chiều từ nguồn qua và nguồn lại. Nhưng để tránh trường hợp lỗi thì khi đổi data thì phải chờ chuyển chuột ra 
+- OneWayToSource: Cập nhật lại cho source nhưng source thay đổi không ảnh hưởng cho thằng này
+- OneTime: Cập nhật 1 lần duy nhất từ source (Lấy giá trị ban đầu và sau đó thì không cập nhật nữa)
+============================================================= Grid ===========================================
