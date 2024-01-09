@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoADOModel.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace LoadDB_Exercise2
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgvStudents.ItemsSource = StudentDAO.GetAllStudents();
         }
     }
 }

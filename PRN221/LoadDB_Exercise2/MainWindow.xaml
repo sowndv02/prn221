@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoadDB_Exercise2"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,7 +18,7 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Major" Binding="{Binding Major}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Major" Binding="{Binding Major.Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Dob" Binding="{Binding Dob}"></DataGridTextColumn>
                 <DataGridTextColumn Header="GPA" Binding="{Binding GPA}"></DataGridTextColumn>
             </DataGrid.Columns>
