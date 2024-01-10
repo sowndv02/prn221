@@ -53,7 +53,7 @@ namespace Slot1_FirstWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Slot1_FirstWPF;V1.0.0.0;component/demolayout.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Slot1_FirstWPF;component/demolayout.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DemoLayout.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

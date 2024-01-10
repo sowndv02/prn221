@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,26 @@ namespace LoadDB_Slot2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+    public class BooleanToGenderConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool isMale)
+            {
+                return isMale ?"Male": "Female";
+            }
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -114,6 +135,29 @@ namespace LoadDB_Slot2
                 PRN211_1Context.ins.SaveChanges();
                 ClearForm();
                 Load();
+            }
+        }
+        private void LoadWithSearch(List<Student> list)
+        {
+            if(list != null && list.Count > 0)
+            {
+                dgvStudents.ItemsSource = list;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(rbAll.IsChecked == true)
+            {
+                Load();
+            }else if(rbMale.IsChecked == true)
+            {
+                var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => x.Gender).ToList();
+                LoadWithSearch(students);
+            } else if(rbFemale.IsChecked == true)
+            {
+                var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => !x.Gender).ToList();
+                LoadWithSearch(students);
             }
         }
     }
