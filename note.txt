@@ -5,3 +5,55 @@
 - OneWayToSource: Cập nhật lại cho source nhưng source thay đổi không ảnh hưởng cho thằng này
 - OneTime: Cập nhật 1 lần duy nhất từ source (Lấy giá trị ban đầu và sau đó thì không cập nhật nữa)
 ============================================================= Grid ===========================================
+
+============================================================= Web ===========================================
+
+
+C#: DI (Dependency Injection), Delegate, Lambda, Attribut, Linq, Asynchrônus, HTTP, ADO.NET/Entity Framework
+- HTML
+- CSS(Boostrap)
+- JavaScript(Jquery)
+- SQL - Query - MS SQL Server, MySQL
+
+- ASP.NET 
+- ASP.NET Razor page 
+- ASP.NET MVC
+
+
+- Xác thực HTTPS và SSL
+dotnet dev-certs https --clean
+dotnet dev-certs https --trust
+
+
+-- Chạy ứng dụng
+Tạo ra 1 đối tượng Host(IHost) object:
+	- Dependency Injection (ID): IServiceProvider (ServiceCollection)
+	- Logging (ILogging) 
+	- Configuration
+	- IHostedService => StartAsync: Run HTTP Server (Kestrel HTTP)
+1. Tạo tạo ra IHostBuilder: IHostBuilder builder = Host.CreateDefaultBuilder(args);
+2. Cấu hình, đăng ký các dịch vụ (goi configureWebHostDefaults) builder.ConfigureWebHostDefaults((IWebHostBuilder webBuilder)=> {
+	// Tùy biến về host
+	// webBuilder
+	webBuilder.UseStartUp<NameClassStartup>();
+	})
+3. IHôstBuilder.Build() => Host(IHost)
+4. Host.Run()
+
+
+Request => pipeline (Middlewware)
+
+
+Để tạo ra 1 Startup của mình thì cần:
+// Đăng ký các dịch vụ của ứng dụng (DI)
+- có phương thúc COnfigureService(IServiceCollections services) // services.AddSingleton
+- có phương thức Configure(IApplicationBuilder app, IWebHostEnvironment evn) // Xây dựng pipeline (Chuỗi middleware)
+
+-- Pipeline là chuỗi các middleware, là chuỗi những đoạn code nhỏ mà HTTP message phải đi qua và đi qua đó nó trả về response
+--- app.Run(async (context) => {await context.Response.WriteAsync("message")}); // Terminate middleware
+--- app.Map("/abc", app1 => {app1.Run(async (context) => {context.Response.WriteAsync("message")})}); // Terminate middleware
+--- Terminate middleware: Không gọi middleware khác. Nếu như middleware có địa chỉ là abc đặt trước thì nếu request từ địa chỉ này sẽ trả về response của địa chỉ này nếu không phải từ abc thì sẽ gọi đến run còn nếu run nằm trước thì sẽ không gọi đến abc
+
+
+-- app.UseStaticFiles(); Cho phép truy cập file tĩnh ở wwwroot nếu có file thì sẽ heiẻn thị nội dung và phải viết ở đầu nếu không có file sẽ được sử lý bởi thằng khác
+-- app.UseStatusCodePages(); // hiển thị code khi không tìm thấy địa chỉ đặt ở đầu hay cuối kh quan trọng
