@@ -59,6 +59,7 @@ namespace LoadDB_Slot2
             cbxDepart.ItemsSource = de;
             var students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
             dgvStudents.ItemsSource = students;
+            cbxGender.ItemsSource = new List<string> { "Male", "Female", "All" };
         }
 
         private void btnInsert_Click(object sender, RoutedEventArgs e)
@@ -80,7 +81,6 @@ namespace LoadDB_Slot2
                     Student s = GetStudentForm();
                     PRN211_1Context.ins.Students.Add(s);
                     PRN211_1Context.ins.SaveChanges();
-                    ClearForm();
                     Load();
                 }
             }
@@ -133,7 +133,6 @@ namespace LoadDB_Slot2
                 oldStudent.Gpa = double.Parse(tbGpa.Text);
                 PRN211_1Context.ins.Students.Update(oldStudent);
                 PRN211_1Context.ins.SaveChanges();
-                ClearForm();
                 Load();
             }
         }
@@ -159,6 +158,219 @@ namespace LoadDB_Slot2
                 var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => !x.Gender).ToList();
                 LoadWithSearch(students);
             }
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            rbAll.IsChecked = false;
+            rbFemale.IsChecked = false;
+            rbFemale.IsChecked = false;
+            cbxGender.SelectedValue = null;
+            cbMale.IsChecked =false;
+            cbFemale.IsChecked =false;
+        }
+
+        private void cbxGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbxGender.SelectedValue != null)
+            {
+                if (cbxGender.SelectedValue.Equals("Male"))
+                {
+                    var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => x.Gender).ToList();
+                    LoadWithSearch(students);
+                }
+                else if (cbxGender.SelectedValue.Equals("Female"))
+                {
+                    var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => !x.Gender).ToList();
+                    LoadWithSearch(students);
+                }
+                else if (cbxGender.SelectedValue.Equals("All"))
+                {
+                    var students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
+                    LoadWithSearch(students);
+                }
+            }
+        }
+
+        private void UpdateColumnVisibility(bool isGpaDisplayChecked)
+        {
+            idColumn.Visibility = isGpaDisplayChecked ? Visibility.Collapsed : Visibility.Visible;
+            nameColumn.Visibility = isGpaDisplayChecked ? Visibility.Collapsed : Visibility.Visible;
+            dobColumn.Visibility = isGpaDisplayChecked ? Visibility.Collapsed : Visibility.Visible;
+            genderCheckboxColumn.Visibility = isGpaDisplayChecked ? Visibility.Collapsed : Visibility.Visible;
+            genderTextColumn.Visibility = isGpaDisplayChecked ? Visibility.Collapsed : Visibility.Visible;
+            majorColumn.Visibility = isGpaDisplayChecked ? Visibility.Collapsed : Visibility.Visible;
+            gpaColumn.Visibility = isGpaDisplayChecked ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+
+        private void HandleCheckBoxState(CheckBox checkBox, Visibility visibility)
+        {
+
+            dobColumn.Visibility = Visibility.Collapsed;
+            genderCheckboxColumn.Visibility = Visibility.Collapsed;
+            genderTextColumn.Visibility = Visibility.Collapsed;
+            gpaColumn.Visibility = Visibility.Collapsed;
+            idColumn.Visibility = Visibility.Collapsed;
+            nameColumn.Visibility = Visibility.Collapsed;
+            majorColumn.Visibility = Visibility.Collapsed;
+
+            if (checkBox == cbGpaDisplay || cbGpaDisplay.IsChecked == true)
+            {
+                gpaColumn.Visibility = visibility;
+            }
+            
+            if (checkBox == cbIdDisplay || cbIdDisplay.IsChecked == true)
+            {
+                idColumn.Visibility = visibility;
+            }
+            
+            if (checkBox == cbNameDisplay || cbNameDisplay.IsChecked == true)
+            {
+                nameColumn.Visibility = visibility;
+            }
+            
+            if (checkBox == cbMajorDisplay || cbMajorDisplay.IsChecked == true)
+            {
+                majorColumn.Visibility = visibility;
+            }
+            if(cbMajorDisplay.IsChecked == false && cbNameDisplay.IsChecked == false && cbIdDisplay.IsChecked == false && cbGpaDisplay.IsChecked == false)
+            {
+                dobColumn.Visibility = Visibility.Visible;
+                genderCheckboxColumn.Visibility = Visibility.Visible;
+                genderTextColumn.Visibility = Visibility.Visible;
+                gpaColumn.Visibility = Visibility.Visible;
+                idColumn.Visibility = Visibility.Visible;
+                nameColumn.Visibility = Visibility.Visible;
+                majorColumn.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void cbIdDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbIdDisplay.IsChecked == true)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Visible);
+            }
+            else if (cbNameDisplay.IsChecked == false)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Collapsed);
+            }
+        }
+
+        private void cbNameDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbNameDisplay.IsChecked == true)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Visible);
+            }
+            else if (cbNameDisplay.IsChecked == false)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Collapsed);
+            }
+        }
+
+        private void cbMajorDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbMajorDisplay.IsChecked == true)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Visible);
+            }
+            else if (cbMajorDisplay.IsChecked == false)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Collapsed);
+            }
+        }
+
+        private void cbGpaDisplay_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbGpaDisplay.IsChecked == true)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Visible);
+            }
+            else if (cbGpaDisplay.IsChecked == false)
+            {
+                HandleCheckBoxState(sender as CheckBox, Visibility.Collapsed);
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbId.Text) && dgvStudents.SelectedCells.Count > 0)
+            {
+                int.TryParse(tbId.Text, out int newId);
+                var student = PRN211_1Context.ins.Students.Where(x => x.Id == newId).FirstOrDefault();
+                if(student != null)
+                {
+                    PRN211_1Context.ins.Students.Remove(student);
+                   
+                }
+                PRN211_1Context.ins.SaveChanges();
+                Load();
+            }
+        }
+
+        private void cbFemale_Checked(object sender, RoutedEventArgs e)
+        {
+            var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => !x.Gender).ToList();
+
+            if (cbMale.IsChecked == true)
+            {
+                students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
+            }
+            LoadWithSearch(students);
+        }
+
+        private void cbFemale_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var students = new List<Student>();
+            if (cbMale.IsChecked == true)
+            {
+                 students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => x.Gender).ToList();
+            }
+            else
+            {
+                 students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
+            }
+            LoadWithSearch(students);
+        }
+
+        private void cbMale_Checked(object sender, RoutedEventArgs e)
+        {
+            var students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => x.Gender).ToList();
+            if (cbFemale.IsChecked == true)
+            {
+                students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
+            }
+            LoadWithSearch(students);
+        }
+
+        private void cbMale_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var students = new List<Student>();
+            if (cbFemale.IsChecked == true)
+            {
+                students = PRN211_1Context.ins.Students.Include(x => x.Depart).Where(x => !x.Gender).ToList();
+            }
+            else
+            {
+                students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
+            }
+            LoadWithSearch(students);
+        }
+
+        private void tbSearchName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var students = new List<Student>();
+            if (String.IsNullOrEmpty(tbSearchName.Text))
+            {
+                students = PRN211_1Context.ins.Students.Include(x => x.Depart).ToList();
+            }
+            else
+            {
+                students = PRN211_1Context.ins.Students.Where(x => x.Name.Contains(tbSearchName.Text)).ToList();
+            }
+            LoadWithSearch(students);
         }
     }
 }

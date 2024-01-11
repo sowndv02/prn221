@@ -12,7 +12,8 @@ namespace DemoADOModel.DAL
     {
         public static SqlConnection GetConnection()
         {
-            string ConnectionStr = "server=COOKIE\\SQLEXPRESS;database=PRN211_1;user=sa;password=123456";
+            //string ConnectionStr = "server=COOKIE\\SQLEXPRESS;database=PRN211_1;user=sa;password=123456";
+            string ConnectionStr = "server=DESKTOP-V87NI7H\\SQLEXPRESS;database=PRN211_1;user=sa;password=sa123456";
             return new SqlConnection(ConnectionStr);
         }
 
@@ -25,6 +26,16 @@ namespace DemoADOModel.DAL
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
+        }
+
+        public static int ExcuteBySql(string sql, params SqlParameter[] parameters)
+        {
+            SqlCommand cmd = new SqlCommand(sql, GetConnection());
+            if (parameters != null || parameters.Length != 0) cmd.Parameters.AddRange(parameters);
+            cmd.Connection.Open();
+            int count = cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
+            return count;
         }
     }
 }

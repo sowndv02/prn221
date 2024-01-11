@@ -4,27 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoadDB_Exercise2"
+        xmlns:sys="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1000" Width="1000">
+    <Window.Resources>
+        <local:BooleanToGenderConverter x:Key="BooleanToGenderConverter"/>
+        <local:StringEqualityConverter x:Key="StringEqualityConverter" />
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <DataGrid Grid.Column="0" Name="dgvStudents" AutoGenerateColumns="False">
+        <DataGrid Grid.Column="0"  Name="dgvStudents" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Major" Binding="{Binding Major.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Dob" Binding="{Binding Dob}"></DataGridTextColumn>
-                <DataGridTextColumn Header="GPA" Binding="{Binding GPA}"></DataGridTextColumn>
+                <DataGridTextColumn Header="MSSV" Binding="{Binding Id}" x:Name="idColumn"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" x:Name="nameColumn"></DataGridTextColumn>
+                <DataGridTextColumn Header="Dob" Binding="{Binding Dob, StringFormat=dd/MM/yyyy}" x:Name="dobColumn"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Gender" Binding="{Binding Gender}" x:Name="genderCheckboxColumn"></DataGridCheckBoxColumn>
+                <DataGridTextColumn Header="Gender" Binding="{Binding Gender, Converter={StaticResource BooleanToGenderConverter}}" x:Name="genderTextColumn"/>
+                <DataGridTextColumn Header="Major" Binding="{Binding Major.Name}" x:Name="majorColumn"></DataGridTextColumn>
+                <DataGridTextColumn Header="Gpa" Binding="{Binding GPA}"  x:Name="gpaColumn"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -40,18 +46,18 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0" Grid.Row="1" Margin="0 10">Id</Label>
-                <TextBox Grid.Column="1" Grid.Row="1"  Margin="0 10" Padding="0 5 " Name="tbId" Width="170" HorizontalAlignment="Left"></TextBox>
+                <TextBox Grid.Column="1" Grid.Row="1"  Margin="0 10" Padding="0 5 " Name="tbId" Width="170" HorizontalAlignment="Left" Text="{Binding Path=SelectedItem.Id, ElementName=dgvStudents, Mode=OneWay}" ></TextBox>
                 <Label Margin="0 10" Grid.Column="0" Grid.Row="2">Name</Label>
-                <TextBox Grid.Column="1" Grid.Row="2" Margin="0 10" Padding="0 5 " Name="tbName" Width="170" HorizontalAlignment="Left"></TextBox>
+                <TextBox Grid.Column="1" Grid.Row="2" Margin="0 10" Padding="0 5 " Name="tbName" Width="170" HorizontalAlignment="Left" Text="{Binding Path=SelectedItem.Name, ElementName=dgvStudents, Mode=OneWay}"></TextBox>
                 <Label Margin="0 10" Grid.Column="0" Grid.Row="3">Gender</Label>
-                <RadioButton Grid.Column="1" Grid.Row="3" Margin="0 20" Name="Male" HorizontalAlignment="Left">Male</RadioButton>
-                <RadioButton Grid.Column="1" Grid.Row="3" Margin="20 20" Name="Female" HorizontalAlignment="Right">Female</RadioButton>
+                <RadioButton Grid.Column="1" Grid.Row="3" Margin="0 20" Name="Male" HorizontalAlignment="Left" IsChecked="{Binding Path=SelectedItem.Gender, ElementName=dgvStudents, Mode=OneWay}">Male</RadioButton>
+                <RadioButton Grid.Column="1" Grid.Row="3" Margin="20 20" Name="Female" HorizontalAlignment="Right" IsChecked="{Binding Path=SelectedItem.Gender, ElementName=dgvStudents, Converter={StaticResource StringEqualityConverter}, ConverterParameter=Female, Mode=OneWay}">Female</RadioButton>
                 <Label Margin="0 10" Grid.Column="0" Grid.Row="4">Major</Label>
-                <ComboBox Grid.Column="1" Name="cbxDepart" Margin="0 10" Padding="0 5 " Width="170" Grid.Row="4"></ComboBox>
+                <ComboBox Grid.Column="1" Name="cbxDepart" Margin="0 10" Padding="0 5 " HorizontalAlignment="Left" Width="170" Grid.Row="4" SelectedValue="{Binding Path=SelectedItem.Major.Name, ElementName=dgvStudents, Mode=OneWay}"></ComboBox>
                 <Label Margin="0 10" Grid.Column="0" Grid.Row="5">Date Of Birth</Label>
-                <DatePicker Grid.Column="1" Name="dob" Margin="0 10" Padding="0 5 " Width="170" Grid.Row="5"></DatePicker>
+                <Calendar Grid.Column="1" Name="dob" Margin="0 10" Padding="0 5" HorizontalAlignment="Left" Width="170" Grid.Row="5" SelectedDate="{Binding Path=SelectedItem.Dob, ElementName=dgvStudents, Mode=OneWay}" DisplayDate="{Binding Path=SelectedItem.Dob, ElementName=dgvStudents, Mode=OneWay}"></Calendar>
                 <Label Margin="0 10" Grid.Column="0" Grid.Row="6">GPA</Label>
-                <TextBox Grid.Column="1" Grid.Row="6" Margin="0 10" Padding="0 5" Width="170"  Name="tbGpa" HorizontalAlignment="Left" Height="26" VerticalAlignment="Bottom"></TextBox>
+                <TextBox Grid.Column="1" Grid.Row="6" Margin="0 10" Padding="0 5" Width="170"  Name="tbGpa" HorizontalAlignment="Left" Height="26" VerticalAlignment="Bottom" Text="{Binding Path=SelectedItem.GPA, ElementName=dgvStudents, Mode=OneWay}"></TextBox>
             </Grid>
             <Grid Height="50">
                 <Grid.ColumnDefinitions>
@@ -59,10 +65,68 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Margin="20,10,20,10" Name="btnInsert" Content="Insert"></Button>
-                <Button Grid.Column="1" Margin="20,10,20,10" Name="btnUpdates">Update</Button>
-                <Button Margin="20,10,20,10" Grid.Column="2" Name="btnDelete">Delete</Button>
+                <Button Grid.Column="0" Margin="20,10,20,10" Name="btnInsert" Content="Insert" Click="btnInsert_Click"></Button>
+                <Button Grid.Column="1" Margin="20,10,20,10" Name="btnUpdates" Click="btnUpdates_Click">Update</Button>
+                <Button Margin="20,10,20,10" Grid.Column="2" Name="btnDelete" Click="btnDelete_Click">Delete</Button>
             </Grid>
+            <StackPanel>
+                <Border BorderBrush="Black" BorderThickness="0,1,0,0" Margin="0,10,0,10"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="1,0,0,0" Width="1" Grid.Column="1" Height="Auto" Margin="10,0,10,0"/>
+                    <StackPanel Grid.Column="0">
+                        <RadioButton Name="rbAll" Margin="5 10">All</RadioButton>
+                        <RadioButton Name="rbMale" Margin="5 10">Male</RadioButton>
+                        <RadioButton Name="rbFemale" Margin="5 10">Female</RadioButton>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <CheckBox Name="cbMale" Content="Male" Margin="0 10" Checked="cbMale_Checked" />
+                        <CheckBox Name="cbFemale" Content="Female" Margin="0 10" Checked="cbFemale_Checked" />
+                        <ComboBox Name="cbxGender" SelectionChanged="cbxGender_SelectionChanged" Margin="0 10 10 0"></ComboBox>
+                    </StackPanel>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="1,0,0,0" Width="1" Grid.Column="1" Height="Auto" Margin="10,0,10,0"/>
+
+                    <Button Grid.Column="0" Grid.Row="1" Margin="10 20 10 20" Click="Button_Click">Search</Button>
+
+                    <Border BorderBrush="Black" BorderThickness="1,0,0,0" Width="1" Grid.Column="1" Grid.Row="2" Height="Auto" Margin="10,0,10,0"/>
+                </Grid>
+                <Button Grid.Column="0" Grid.Row="0" Margin="10 20 10 20" Name="btnClear" Click="btnClear_Click">Clear</Button>
+            </StackPanel>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Column="0" Margin="10,0,66,0"  Name="cbGpaDisplay" Click="cbGpaDisplay_Click" Grid.ColumnSpan="2" Height="15" VerticalAlignment="Top">GPA</CheckBox>
+                    <CheckBox Grid.Column="1" Margin="10,0,0,0"  Name="cbIdDisplay" Click="cbIdDisplay_Click">ID</CheckBox>
+                    <CheckBox Grid.Column="2" Margin="10,0,0,0"  Name="cbNameDisplay" Height="15" VerticalAlignment="Bottom" Click="cbNameDisplay_Click">Name</CheckBox>
+                    <CheckBox Grid.Column="3" Margin="10 0 0 0 "  Name="cbMajorDisplay" Click="cbMajorDisplay_Click">Major</CheckBox>
+                </Grid>
+                <StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="0,1,0,0" Margin="0,10,0,10"/>
+                    <Label>Search Student by Name</Label>
+                    <TextBox Name="tbSearchName" Margin="0 0 0 20" TextChanged="tbSearchName_TextChanged"></TextBox>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

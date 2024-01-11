@@ -46,3 +46,12 @@ D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\LoadDB_Exercise2\bin\Debu
 D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\LoadDB_Exercise2\obj\Debug\net6.0-windows\LoadDB_Exercise2.csproj.AssemblyReference.cache
 D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\LoadDB_Exercise2\obj\Debug\net6.0-windows\LoadDB_Exercise2.csproj.CopyComplete
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\obj\Debug\net6.0-windows\LoadDB_Exercise2.csproj.AssemblyReference.cache
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\obj\Debug\net6.0-windows\LoadDB_Exercise2.csproj.CopyComplete
+H:\PRN221\Project\PRN221\LoadDB_Exercise2\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
