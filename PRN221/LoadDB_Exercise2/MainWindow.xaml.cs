@@ -364,5 +364,33 @@ namespace LoadDB_Exercise2
                 }
             }
         }
+
+        private void cbFemale_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var students = new List<Student>();
+            if (cbMale.IsChecked == true)
+            {
+                students = StudentDAO.SearchStudentByGender(true);
+            }
+            else
+            {
+                students = StudentDAO.GetAllStudents();
+            }
+            LoadWithSearch(students);
+        }
+
+        private void cbMale_Unchecked(object sender, RoutedEventArgs e)
+        {
+            var students = new List<Student>();
+            if (cbMale.IsChecked == true)
+            {
+                students = StudentDAO.SearchStudentByGender(true);
+            }
+            else
+            {
+                students = StudentDAO.GetAllStudents();
+            }
+            LoadWithSearch(students);
+        }
     }
 }

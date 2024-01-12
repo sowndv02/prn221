@@ -19,6 +19,10 @@
 -- Table structure for table `assign_setting`
 --
 
+-- DROP DATABASE IF EXISTS `SEP_Management`;
+
+-- CREATE DATABASE `sSEP_Management`;
+
 DROP TABLE IF EXISTS `assign_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;

@@ -84,8 +84,8 @@
                         <RadioButton Name="rbFemale" Margin="5 10">Female</RadioButton>
                     </StackPanel>
                     <StackPanel Grid.Column="2">
-                        <CheckBox Name="cbMale" Content="Male" Margin="0 10" Checked="cbMale_Checked" />
-                        <CheckBox Name="cbFemale" Content="Female" Margin="0 10" Checked="cbFemale_Checked" />
+                        <CheckBox Name="cbMale" Content="Male" Margin="0 10" Checked="cbMale_Checked" Unchecked="cbMale_Unchecked" />
+                        <CheckBox Name="cbFemale" Content="Female" Margin="0 10" Checked="cbFemale_Checked" Unchecked="cbFemale_Unchecked" />
                         <ComboBox Name="cbxGender" SelectionChanged="cbxGender_SelectionChanged" Margin="0 10 10 0"></ComboBox>
                     </StackPanel>
                 </Grid>
