@@ -15,13 +15,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding_WPF", "Binding_WPF\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomobileWPFApp", "Lab1_AutomobileManagement\AutomobileWPFApp.csproj", "{F0D14CC3-43A9-4FF5-943F-3E99E3251E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadXmlAndJson_Excercise4", "LoadXmlAndJson\LoadXmlAndJson_Excercise4.csproj", "{2EEA67E9-122B-434F-ABAC-5C7CB6053736}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadXmlAndJson_Excercise4", "LoadXmlAndJson\LoadXmlAndJson_Excercise4.csproj", "{2EEA67E9-122B-434F-ABAC-5C7CB6053736}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadJson_Excercise3", "LoadJson_Excercise3\LoadJson_Excercise3.csproj", "{D33FF2D8-40F8-4C6B-B328-2DE83A64F933}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadJson_Excercise3", "LoadJson_Excercise3\LoadJson_Excercise3.csproj", "{D33FF2D8-40F8-4C6B-B328-2DE83A64F933}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadXml_Slot4", "LoadXml_Slot4\LoadXml_Slot4.csproj", "{1B4F2F2B-AA1D-472E-8717-BF612D80A6AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadXml_Slot4", "LoadXml_Slot4\LoadXml_Slot4.csproj", "{1B4F2F2B-AA1D-472E-8717-BF612D80A6AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomobileLibrary", "AutomobileLibrary\AutomobileLibrary.csproj", "{7EAC024B-99BA-4096-A8A7-0B6F85C1920D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomobileLibrary", "AutomobileLibrary\AutomobileLibrary.csproj", "{7EAC024B-99BA-4096-A8A7-0B6F85C1920D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_DependencyInjection", "Demo_DependencyInjection\Demo_DependencyInjection.csproj", "{90B1F6E7-B519-4050-A032-7FEC56598114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_RazorPage", "Demo_RazorPage\Demo_RazorPage.csproj", "{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{7EAC024B-99BA-4096-A8A7-0B6F85C1920D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EAC024B-99BA-4096-A8A7-0B6F85C1920D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EAC024B-99BA-4096-A8A7-0B6F85C1920D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B1F6E7-B519-4050-A032-7FEC56598114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B1F6E7-B519-4050-A032-7FEC56598114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B1F6E7-B519-4050-A032-7FEC56598114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B1F6E7-B519-4050-A032-7FEC56598114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
