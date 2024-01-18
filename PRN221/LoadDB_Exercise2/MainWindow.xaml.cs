@@ -382,9 +382,9 @@ namespace LoadDB_Exercise2
         private void cbMale_Unchecked(object sender, RoutedEventArgs e)
         {
             var students = new List<Student>();
-            if (cbMale.IsChecked == true)
+            if (cbFemale.IsChecked == true)
             {
-                students = StudentDAO.SearchStudentByGender(true);
+                students = StudentDAO.SearchStudentByGender(false);
             }
             else
             {
