@@ -1,0 +1,26 @@
+﻿@page
+@model LoadDB_EF_RazorPage.Pages.Students.IndexModel
+@{
+}
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Department</th>
+        <th>GPA</th>
+    </tr>
+    @foreach(var st in Model.students)
+    {
+        <tr>
+            <td>@st.Id</td>
+            <td>@st.Name</td>
+            <td>@(st.Gender ? "Male" : "Female")</td>
+            <td>@st.Dob?.ToString("dd/MM/yyyy")</td>
+            <td>@st.Depart.Name</td>
+            <td>@st.Gpa</td>
+        </tr>
+    }
+</table>

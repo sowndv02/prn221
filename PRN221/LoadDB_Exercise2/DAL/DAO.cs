@@ -12,8 +12,8 @@ namespace DemoADOModel.DAL
     {
         public static SqlConnection GetConnection()
         {
-            // string ConnectionStr = "server=COOKIE\\SQLEXPRESS;database=PRN211_1;user=sa;password=123456";
-            string ConnectionStr = "server=DESKTOP-V87NI7H\\SQLEXPRESS;database=PRN211_1;user=sa;password=sa123456";
+            string ConnectionStr = "server=COOKIE\\SQLEXPRESS;database=PRN211_1;user=sa;password=123456";
+            //string ConnectionStr = "server=DESKTOP-V87NI7H\\SQLEXPRESS;database=PRN211_1;user=sa;password=sa123456";
             return new SqlConnection(ConnectionStr);
         }
 
