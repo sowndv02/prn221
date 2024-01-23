@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Update_Source_Trigger_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Binding_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Border_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Canvas_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Command_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DataTemplate_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DockPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Image_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ListBox_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ListView_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ScrollViewer_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SliderBar_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Style_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TreeView_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Trigger_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Value_Converter_WPF.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Update_Source_Trigger_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Binding_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Border_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Canvas_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Command_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DataTemplate_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DockPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Image_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ListBox_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ListView_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ScrollViewer_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SliderBar_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StyleResource.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TreeView_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Trigger_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Value_Converter_WPF.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

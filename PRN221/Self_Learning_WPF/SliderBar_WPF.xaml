@@ -1,0 +1,13 @@
+﻿<Window x:Class="Self_Learning_WPF.SliderBar_WPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Self_Learning_WPF"
+        mc:Ignorable="d"
+        Title="SliderBar_WPF" Height="450" Width="800">
+    <Grid>
+        <Slider Name="sliderName" Maximum="100" Value="50"></Slider>
+        <TextBox Name="tbValue" Text="{Binding Path=Value, ElementName=sliderName}"></TextBox>
+    </Grid>
+</Window>

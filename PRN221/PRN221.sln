@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_Slot2", "LoadDB_Slot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_Exercise2", "LoadDB_Exercise2\LoadDB_Exercise2.csproj", "{626D8652-779B-4D07-94D5-5089C039A4C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding_WPF", "Binding_WPF\Binding_WPF.csproj", "{590D252F-3BA6-4399-B883-D9EB87F989E5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomobileWPFApp", "Lab1_AutomobileManagement\AutomobileWPFApp.csproj", "{F0D14CC3-43A9-4FF5-943F-3E99E3251E58}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadXmlAndJson_Excercise4", "LoadXmlAndJson\LoadXmlAndJson_Excercise4.csproj", "{2EEA67E9-122B-434F-ABAC-5C7CB6053736}"
@@ -27,9 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_DependencyInjection", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_RazorPage", "Demo_RazorPage\Demo_RazorPage.csproj", "{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadTxt_Practice", "LoadTxt_Practice\LoadTxt_Practice.csproj", "{D940149D-3173-4872-937F-C173ACDB8911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadTxt_Practice", "LoadTxt_Practice\LoadTxt_Practice.csproj", "{D940149D-3173-4872-937F-C173ACDB8911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadDB_EF_RazorPage", "LoadDB_EF_RazorPage\LoadDB_EF_RazorPage.csproj", "{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_EF_RazorPage", "LoadDB_EF_RazorPage\LoadDB_EF_RazorPage.csproj", "{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Self_Learning_WPF", "Self_Learning_WPF\Self_Learning_WPF.csproj", "{625E2877-8916-4D43-9CC7-C32565247584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,6 @@ Global
 		{626D8652-779B-4D07-94D5-5089C039A4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626D8652-779B-4D07-94D5-5089C039A4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626D8652-779B-4D07-94D5-5089C039A4C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{590D252F-3BA6-4399-B883-D9EB87F989E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{590D252F-3BA6-4399-B883-D9EB87F989E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{590D252F-3BA6-4399-B883-D9EB87F989E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{590D252F-3BA6-4399-B883-D9EB87F989E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0D14CC3-43A9-4FF5-943F-3E99E3251E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0D14CC3-43A9-4FF5-943F-3E99E3251E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0D14CC3-43A9-4FF5-943F-3E99E3251E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +89,10 @@ Global
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625E2877-8916-4D43-9CC7-C32565247584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625E2877-8916-4D43-9CC7-C32565247584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625E2877-8916-4D43-9CC7-C32565247584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625E2877-8916-4D43-9CC7-C32565247584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

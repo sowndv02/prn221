@@ -5,6 +5,56 @@
 - OneWayToSource: Cập nhật lại cho source nhưng source thay đổi không ảnh hưởng cho thằng này
 - OneTime: Cập nhật 1 lần duy nhất từ source (Lấy giá trị ban đầu và sau đó thì không cập nhật nữa)
 ============================================================= Grid ===========================================
+- Sử dụng như hệ thống lưới
+============================================================= StackPanel ===========================================
+- Tự động dãn kích thước height theo content còn width thì full
+- Orientaion = Horizontal (Ngang) hoặc Vertical (Dọc)
+============================================================= WrapPanel ===========================================
+- Giống như stackPanel nhưng có update nếu control bị tràn ra ngoài thì nó sẽ tự xuống dòng
+
+============================================================= DockPanel ===========================================
+- Giống stackPanel nhưng phần tử cuối sẽ phình to ra hết chỗ trống thừa
+- Nếu không sẽ tự bắt vào left
+- Control không nằm đè lên nhau
+- LastChildFill = false tắt việc phần tử cuối sẽ fill đầy chỗ trống hiện có
+- DockPanel.Dock = Top sẽ làm đổi vị trí tương tự Grid chia cột
+- Việc vị trí sẽ phụ thuộc vào thàng nào được set trước set sau
+
+============================================================= Canvas ===========================================
+- Dùng cho vẽ đồ họa 3D vẫn 
+- Có thể sử dụng margin nhưng điểm mạnh là top và left right botto (vị trí của element so với biên độ rộng)
+- Dùng zIndex để set việc thằng nào sẽ hiển thị ghi đè lên thàng còn lại
+- Dùng để vẽ elip, rectangle mặc dù Grid vẫn có thể vẽ nhưng ưu tiên Canvas do có thể vẽ 3D và thay đổi vị trí
+============================================================= Border ===========================================
+- Không thể border cho đúng từng element mà phải border cho thằng bao bọc lấy cái element đó
+- Border chỉ có thể có 1 con vì vậy nó phải nằm ngoài 1 thằng bao quanh
+- BorderBrush="Black" (Màu border) BorderThickness="5" (độ dày border)
+
+============================================================= ScrollViewer ===========================================
+============================================================= Toggle Button ===========================================
+============================================================= Slider ===========================================
+============================================================= Image ===========================================
+============================================================= Style ===========================================
+============================================================= DataTemplate ===========================================
+- Dùng để tạo ra 1 template để tái sử dụng
+============================================================= ListBox ===========================================
+============================================================= ListView ===========================================
+============================================================= TreeView ===========================================
+- Display 
+- Binding
+- Lazyloading
+============================================================= Trigger ===========================================
+- Nhu trigger trong sql
+- Single Trigger
+- Multiple trigger
+============================================================= Command ===========================================
+- User Defined 
+- System defined
+
+============================================================= Update Source Trigger ===========================================
+- Thong bao rang co su thay doi de update khi binding
+============================================================= Value Converter ===========================================
+
 
 ============================================================= Web ===========================================
 

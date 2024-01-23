@@ -1,0 +1,101 @@
+﻿<Window x:Class="Self_Learning_WPF.ScrollViewer_WPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Self_Learning_WPF"
+        mc:Ignorable="d"
+        Title="ScrollViewer_WPF" Height="450" Width="800">
+    <Grid>
+        <Button Click="Button_Click" Content="Click" Width="30" Height="30" HorizontalAlignment="Left" ></Button>
+        <Grid Width="200" HorizontalAlignment="Left">
+            <ScrollViewer Name="scrviewer" VerticalScrollBarVisibility="Auto" 
+                          HorizontalScrollBarVisibility="Visible"> 
+                <StackPanel >
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                    <Button Content="1"></Button>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Width="200" HorizontalAlignment="Right">
+            <ScrollViewer>
+                <TextBlock TextWrapping="Wrap">
+    SonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDV
+SonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDV
+    SonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDVSonDV
+                </TextBlock>
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+</Window>
