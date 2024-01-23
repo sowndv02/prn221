@@ -29,8 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadTxt_Practice", "LoadTxt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_EF_RazorPage", "LoadDB_EF_RazorPage\LoadDB_EF_RazorPage.csproj", "{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}"
 EndProject
+<<<<<<< .mine
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Self_Learning_WPF", "Self_Learning_WPF\Self_Learning_WPF.csproj", "{625E2877-8916-4D43-9CC7-C32565247584}"
 EndProject
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_ADO.Net", "LoadDB_ADO.Net\LoadDB_ADO.Net.csproj", "{4880947B-BA60-45FC-8D3B-10AA648EF8D3}"
+EndProject
+>>>>>>> .theirs
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,10 +94,17 @@ Global
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< .mine
 		{625E2877-8916-4D43-9CC7-C32565247584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{625E2877-8916-4D43-9CC7-C32565247584}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{625E2877-8916-4D43-9CC7-C32565247584}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{625E2877-8916-4D43-9CC7-C32565247584}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> .theirs
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,37 @@
+﻿@page
+@model LoadDB_EF_RazorPage.Pages.Students.EditModel
+@{
+}
+
+<form asp-action="/Students/Edit" method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input asp-for="std.Id" /></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input asp-for="std.Name" /></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input asp-for="std.Gender" /></td>
+        </tr>
+        <tr>
+            <td>DepartmentName</td>
+            <td>
+                <select asp-for="std.DepartId" asp-items="@ViewBag.departments"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td><input asp-for="std.Dob" type="date" /></td>
+        </tr>
+        <tr>
+            <td>GPA</td>
+            <td><input asp-for="std.Gpa" /></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Edit" />
+</form>

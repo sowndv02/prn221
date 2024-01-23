@@ -2,7 +2,7 @@
 @model LoadDB_EF_RazorPage.Pages.Students.IndexModel
 @{
 }
-
+<a href="/Students/Add">Create new student</a>
 <table>
     <tr>
         <th>Id</th>
@@ -11,6 +11,9 @@
         <th>Date of birth</th>
         <th>Department</th>
         <th>GPA</th>
+        <td>Edit</td>
+        <td>Details</td>
+        <td>Delete</td>
     </tr>
     @foreach(var st in Model.students)
     {
@@ -21,6 +24,9 @@
             <td>@st.Dob?.ToString("dd/MM/yyyy")</td>
             <td>@st.Depart.Name</td>
             <td>@st.Gpa</td>
+            <td> <a href="/Students/Edit?id=@st.Id">Edit</a></td>
+            <td><a href="/Students/Delete?id=@st.Id">Delete</a></td>
+            <td><a href="/Students/Dêtails?id=@st.Id">Details</a></td>
         </tr>
     }
 </table>

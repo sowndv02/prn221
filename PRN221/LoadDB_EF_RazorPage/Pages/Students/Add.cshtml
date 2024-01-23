@@ -1,0 +1,47 @@
+﻿@page
+@model LoadDB_EF_RazorPage.Pages.Students.AddModel
+@{
+}
+
+<form asp-action="/Students/Add" method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input asp-for="std.Id" /></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input asp-for="std.Name"  /></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input asp-for="std.Gender" /></td>
+        </tr>
+        <tr>
+            <td>DepartmentName</td>
+            <td>
+                @* <select asp-for="std.DepartId">
+                    @foreach (var de in Model.dept)
+                    {
+                        <option value="@de.Id">@de.Name</option>
+                    }
+                </select> *@
+                <select asp-for="std.DepartId" asp-items="@ViewBag.departments" ></select>
+                @* @foreach(var de in Model.dept)
+                {
+                    <input type="radio" asp-for= "std.DepartId" value="@de.Id" />@de.Name <br />
+                } *@
+            </td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td><input asp-for="std.Dob" type="date" /></td>
+        </tr>
+        <tr>
+            <td>GPA</td>
+            <td><input asp-for="std.Gpa" /></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Insert" />
+</form>
