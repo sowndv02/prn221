@@ -27,9 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_DependencyInjection", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_RazorPage", "Demo_RazorPage\Demo_RazorPage.csproj", "{40F72B61-5AB1-412E-9CE8-805D0D90DFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadTxt_Practice", "LoadTxt_Practice\LoadTxt_Practice.csproj", "{D940149D-3173-4872-937F-C173ACDB8911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadTxt_Practice", "LoadTxt_Practice\LoadTxt_Practice.csproj", "{D940149D-3173-4872-937F-C173ACDB8911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadDB_EF_RazorPage", "LoadDB_EF_RazorPage\LoadDB_EF_RazorPage.csproj", "{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_EF_RazorPage", "LoadDB_EF_RazorPage\LoadDB_EF_RazorPage.csproj", "{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDB_ADO.Net", "LoadDB_ADO.Net\LoadDB_ADO.Net.csproj", "{4880947B-BA60-45FC-8D3B-10AA648EF8D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D50A4E8-6D51-4449-BE1E-825EF9BA1785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4880947B-BA60-45FC-8D3B-10AA648EF8D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

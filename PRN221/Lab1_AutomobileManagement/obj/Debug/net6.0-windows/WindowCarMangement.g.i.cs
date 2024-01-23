@@ -188,7 +188,7 @@ namespace AutomobileWPFApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AutomobileWPFApp;V1.0.0.0;component/windowcarmangement.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AutomobileWPFApp;component/windowcarmangement.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\WindowCarMangement.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
