@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-H:\PRN221\Project\PRN221\Self_Learning_WPF\obj\Debug\net6.0-windows\
+D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\Self_Learning_WPF\obj\Debug\net6.0-windows\
 Self_Learning_WPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-H:\PRN221\Project\PRN221\Self_Learning_WPF\App.xaml
-151332287821
+D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\Self_Learning_WPF\App.xaml
+17441108225
 
-161002142035
-194183970531
-Binding_WPF.xaml;Border_WPF.xaml;Canvas_WPF.xaml;Command_WPF.xaml;DataTemplate_WPF.xaml;DockPanel.xaml;Image_WPF.xaml;ListBox_WPF.xaml;ListView_WPF.xaml;ScrollViewer_WPF.xaml;SliderBar_WPF.xaml;StyleResource.xaml;Style_WPF.xaml;TreeView_WPF.xaml;Trigger_WPF.xaml;
+181875578755
+194-2067936865
+Binding_WPF.xaml;Border_WPF.xaml;Canvas_WPF.xaml;Command_WPF.xaml;DataTemplate_WPF.xaml;DockPanel.xaml;Image_WPF.xaml;ListBox_WPF.xaml;ListView_WPF.xaml;ScrollViewer_WPF.xaml;SliderBar_WPF.xaml;StyleResource.xaml;Style_WPF.xaml;TreeView_WPF.xaml;Trigger_WPF.xaml;Update_Source_Trigger_WPF.xaml;Value_Converter_WPF.xaml;
 
 False
 

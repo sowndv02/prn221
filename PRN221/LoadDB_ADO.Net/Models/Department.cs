@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoadDB_Exercise2.Models
+namespace LoadDB_ADONet.Models
 {
     public class Department
     {

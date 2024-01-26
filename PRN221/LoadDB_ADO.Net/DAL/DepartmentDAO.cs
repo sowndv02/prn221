@@ -1,4 +1,4 @@
-﻿using DemoADOModel.DAL;
+﻿using LoadDB_ADONet.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,10 +6,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DemoADOModel.Models;
-using LoadDB_Exercise2.Models;
+using LoadDB_ADONet.Models;
+using LoadDB_ADONet.Repository;
 
-namespace LoadDB_Exercise2.DAL
+namespace LoadDB_ADONet.DAL
 {
     public class DepartmentDAO
     {

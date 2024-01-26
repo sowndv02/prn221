@@ -1,0 +1,44 @@
+﻿@page
+@model LoadXML_RazorPage.Pages.Persons.IndexModel
+@{
+    Layout = null;
+}
+
+
+
+<a href="/Persons/Add">Create new person</a>
+@if (Model.Persons != null && Model.Persons.Count > 0)
+{
+    
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date of birth</th>
+            <th>GPA</th>
+            <td>Edit</td>
+            <td>Details</td>
+            <td>Delete</td>
+        </tr>
+        @foreach (var st in Model.Persons)
+        {
+            <tr>
+                <td>@st.Id</td>
+                <td>@st.Name</td>
+                <td>@(st.Gender ? "Male" : "Female")</td>
+                <td>@st.Dob.ToString("dd/MM/yyyy")</td>
+                <td>@st.Gpa</td>
+                <td> <button><a href="/Persons/Edit?id=@st.Id">Edit</a></button></td>
+                <td>
+                    <a href="/Persons/Delete?id=@st.Id">Delete</a>
+                </td>
+                <td><button><a href="/Persons/Details?id=@st.Id">Details</a></button></td>
+            </tr>
+        }
+    </table>
+    
+     <form method="get" action="Persons/SaveFile">
+        <button type="submit">Save XML</button>
+    </form>
+}

@@ -1,5 +1,5 @@
-﻿using DemoADOModel.Models;
-using LoadDB_Exercise2.DAL;
+﻿using  LoadDB_ADONet.Models;
+using LoadDB_ADONet.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,9 +9,11 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-namespace DemoADOModel.DAL
+using LoadDB_ADONet.Repository;
+
+namespace LoadDB_ADONet.DAL
 {
-    class StudentDAO
+    public class StudentDAO
     {
         public static List<Student> GetAllStudents()
         {
@@ -107,11 +109,11 @@ namespace DemoADOModel.DAL
             SqlParameter parameter3 = new SqlParameter("@gender", SqlDbType.Bit);
             parameter3.Value = student.Gender;
             SqlParameter parameter4 = new SqlParameter("@departId", SqlDbType.NVarChar);
-            parameter4.Value = student.DepartmentId;
+            parameter4.Value = student.DepartId;
             SqlParameter parameter5 = new SqlParameter("@dob", SqlDbType.Date);
             parameter5.Value = student.Dob;
             SqlParameter parameter6 = new SqlParameter("@gpa", SqlDbType.Float);
-            parameter6.Value = student.GPA;
+            parameter6.Value = student.Gpa;
             return DAO.ExcuteBySql(sql, parameter1, parameter2, parameter3, parameter4, parameter5, parameter6);
         }
 
@@ -126,14 +128,14 @@ namespace DemoADOModel.DAL
             SqlParameter parameter3 = new SqlParameter("@gender", SqlDbType.Bit);
             parameter3.Value = student.Gender;
             SqlParameter parameter4 = new SqlParameter("@departId", SqlDbType.NVarChar);
-            parameter4.Value = student.DepartmentId;
+            parameter4.Value = student.DepartId;
             SqlParameter parameter5 = new SqlParameter("@dob", SqlDbType.Date);
             parameter5.Value = student.Dob;
             SqlParameter parameter6 = new SqlParameter("@gpa", SqlDbType.Float);
-            parameter6.Value = student.GPA;
+            parameter6.Value = student.Gpa;
             return DAO.ExcuteBySql(sql, parameter1, parameter2, parameter3, parameter4, parameter5, parameter6);
         }
-        
+
         public static int DeleteStudent(int id)
         {
             String sql = "DELETE Student Where id = @id";
@@ -141,6 +143,5 @@ namespace DemoADOModel.DAL
             parameter1.Value = id;
             return DAO.ExcuteBySql(sql, parameter1);
         }
-
     }
 }

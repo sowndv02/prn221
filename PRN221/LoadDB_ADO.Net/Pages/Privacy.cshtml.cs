@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace LoadDB_ADO.Net.Pages
+namespace LoadDB_EF_RazorPage.Pages
 {
     public class PrivacyModel : PageModel
     {

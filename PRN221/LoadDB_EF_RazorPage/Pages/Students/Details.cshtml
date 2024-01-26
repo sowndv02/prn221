@@ -1,0 +1,34 @@
+﻿@page
+@model LoadDB_EF_RazorPage.Pages.Students.DetailsModel
+@{
+}
+
+@if(Model.std != null)
+{
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>DepartmentName</td>
+            <td>Date of birth</td>
+            <td>GPA</td>
+        </tr>
+        <tr>
+            @if (Model.std != null)
+            {
+                <td><p>@Model.std.Id</p></td>
+                <td><p>@Model.std.Name</p></td>
+                <td><p>@Model.std.Gender</p></td>
+                <td><p>@Model.std.Depart.Name</p></td>
+                <td><p>@Model.std.Dob?.ToString("dd/MM/yyyy")</p></td>
+                <td><p>@Model.std.Gpa</p></td>
+            }
+        </tr>
+
+    </table>
+}
+else
+{
+    <h1>Nothing student</h1>
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model LoadDB_ADONet.Pages.Students.AddModel
+@{
+}
+
+<form asp-action="/Students/Add" method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input name="id" /></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input name="name"  /></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input name="gender" type="radio" value="1" /> Male <br /><input type="radio" name="gender" value="0" />Female </td>
+        </tr>
+        <tr>
+            <td>DepartmentName</td>
+            <td>
+                @foreach(var de in Model.departments)
+                {
+                    <input type="radio" name="departId" value="@de.Id" />@de.Name <br />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td><input name="dob" type="date" /></td>
+        </tr>
+        <tr>
+            <td>GPA</td>
+            <td><input name="gpa" /></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Insert" />
+</form>

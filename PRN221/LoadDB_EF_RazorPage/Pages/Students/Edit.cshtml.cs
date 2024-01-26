@@ -17,8 +17,8 @@ namespace LoadDB_EF_RazorPage.Pages.Students
         public List<Department> departments { get; private set; }
         public void OnGet(string? id)
         {
-            // Ktra ID xem co null ? =>
-            std = _context.Students.Find(int.Parse(id));
+            if (!string.IsNullOrWhiteSpace(id) && int.TryParse(id, out int sId))
+                std = _context.Students.Find(int.Parse(id));
             ViewData["departments"] = new SelectList(_context.Departments.ToList(), "Id", "Name");
         }
 

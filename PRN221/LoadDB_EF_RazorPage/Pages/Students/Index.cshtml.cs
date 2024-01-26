@@ -17,5 +17,16 @@ namespace LoadDB_EF_RazorPage.Pages.Students
         {
             students = _context.Students.Include(x => x.Depart).ToList();
         }
+
+        public void OnPost(string? id)
+        {
+            if(!string.IsNullOrWhiteSpace(id) && int.TryParse(id, out int sId))
+            {
+                Student student = _context.Students.SingleOrDefault(x => x.Id == sId);
+                _context.Students.Remove(student);
+                _context.SaveChanges();
+            }
+            students = _context.Students.Include(x => x.Depart).ToList();
+        }
     }
 }

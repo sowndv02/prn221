@@ -31,7 +31,7 @@ namespace AutomobileWPFApp
             carRepository = repository;
         }
 
-        private Car
+        private Car GetCarObject()
         {
             Car car = null;
             try

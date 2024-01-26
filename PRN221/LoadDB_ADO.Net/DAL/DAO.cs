@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace DemoADOModel.DAL
+namespace LoadDB_ADONet.DAL
 {
-    internal class DAO
+
+    public class DAO
     {
         public static SqlConnection GetConnection()
         {
