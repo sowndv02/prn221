@@ -1,6 +1,7 @@
 using LoadDB_EF_RazorPage.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace LoadDB_EF_RazorPage.Pages.Students
@@ -13,12 +14,14 @@ namespace LoadDB_EF_RazorPage.Pages.Students
             _context = context;
         }
         public List<Student> students { get; set; }
+        public List<Department> departments { get; set; }   
         public void OnGet()
         {
             students = _context.Students.Include(x => x.Depart).ToList();
+            ViewData["departments"] = new SelectList(_context.Departments.ToList(), "Id", "Name");
+            departments = _context.Departments.ToList();
         }
-
-        public void OnPost(string? id)
+            public void OnPost(string? id)
         {
             if(!string.IsNullOrWhiteSpace(id) && int.TryParse(id, out int sId))
             {

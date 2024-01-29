@@ -1,0 +1,14 @@
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\bin\Debug\net6.0\Learning_Async_Await.exe
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\bin\Debug\net6.0\Learning_Async_Await.deps.json
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\bin\Debug\net6.0\Learning_Async_Await.runtimeconfig.json
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\bin\Debug\net6.0\Learning_Async_Await.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\bin\Debug\net6.0\Learning_Async_Await.pdb
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.GeneratedMSBuildEditorConfig.editorconfig
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.AssemblyInfoInputs.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.AssemblyInfo.cs
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.csproj.CoreCompileInputs.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\refint\Learning_Async_Await.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.pdb
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\Learning_Async_Await.genruntimeconfig.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Async_Await\obj\Debug\net6.0\ref\Learning_Async_Await.dll

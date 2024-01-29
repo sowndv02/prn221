@@ -3,6 +3,71 @@
 @{
 }
 <a href="/Students/Add">Create new student</a>
+<h3>Search By Gender Radiobutton</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type1" />
+    <input type="radio" onclick="this.form.submit()" name="gender" value="true"/> Male<br />
+    <input type="radio" onclick="this.form.submit()" name="gender" value="false"/> Female<br />
+</form>
+<hr />
+<h3>Search By Gender Checkbox</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type2" />
+    <input type="checkbox" onclick="this.form.submit()" name="male" value="male" /> Male<br />
+    <input type="checkbox" onclick="this.form.submit()" name="female" value="female" /> Female<br />
+</form>
+<hr />
+<h3>Search By Gender Combobox</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type3" />
+    <select name="gender" onchange="this.form.submit()">
+        <option value="">Select gender</option>
+        <option value="true">Male</option>
+        <option value="false">Female</option>
+    </select>
+</form>
+<hr />
+<h3>Search By Department Combobox</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type4" />
+    <select name="department" asp-items="@ViewBag.departments" onchange="this.form.submit()">
+        <option value="">Select department</option>
+    </select>
+</form>
+<hr />
+<h3>Search By Department Checkbox</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type5" />
+    @foreach(var dep in Model.departments)
+    {
+        <input type="checkbox" name="departmentsSearch" onclick="this.form.submit()" value="@dep.Id" />
+
+        @dep.Name <br />
+    }
+</form>
+<hr />
+<h3>Search By Department Radiobutton</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type6" />
+    @foreach(var dep in Model.departments)
+    {
+        <input type="radio" name="department" onclick="this.form.submit()" value="@dep.Id"/>@dep.Name <br />
+    }
+</form>
+
+<hr />
+<h3>Search By Department Checkbox And Gender Checkbox</h3>
+<form action="/Students/Search" method="get">
+    <input type="hidden" name="searchType" value="type7" />
+    <select name="department" asp-items="@ViewBag.departments">
+        <option value="">Select department</option>
+    </select>
+    <br />
+    <input type="checkbox" name="male" value="male" /> Male &nbsp; &nbsp;&nbsp;&nbsp;
+    <input type="checkbox" name="female" value="female" /> Female<br />
+    <button type="submit">Search</button>
+</form>
+
 <table>
     <tr>
         <th>Id</th>

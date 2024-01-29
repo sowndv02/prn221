@@ -1,0 +1,36 @@
+﻿@page
+@model LoadDB_EF_RazorPage.Pages.Students.SearchModel
+@{
+}
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of birth</th>
+        <th>Department</th>
+        <th>GPA</th>
+        <td>Edit</td>
+        <td>Delete</td>
+        <td>Details</td>
+    </tr>
+    @foreach (var st in Model.students)
+    {
+        <tr>
+            <td>@st.Id</td>
+            <td>@st.Name</td>
+            <td>@(st.Gender ? "Male" : "Female")</td>
+            <td>@st.Dob?.ToString("dd/MM/yyyy")</td>
+            <td>@st.Depart.Name</td>
+            <td>@st.Gpa</td>
+            <td> <button><a href="/Students/Edit?id=@st.Id">Edit</a></button></td>
+            <td>
+                <form method="post">
+                    <input type="hidden" name="id" value="@st.Id">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+            <td><button><a href="/Students/Details?id=@st.Id">Details</a></button></td>
+        </tr>
+    }
+</table>

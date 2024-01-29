@@ -3,9 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Middleware", "Learning_ASPNETCORE\Learning_Middleware.csproj", "{E8C0B4E6-D708-4218-BEBA-8E4BC7E387C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Middleware", "Learning_ASPNETCORE\Learning_Middleware.csproj", "{E8C0B4E6-D708-4218-BEBA-8E4BC7E387C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Cookie", "Learning_Cookie\Learning_Cookie.csproj", "{5856F0A3-BEE8-432F-96C9-E29C399BB88A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Cookie", "Learning_Cookie\Learning_Cookie.csproj", "{5856F0A3-BEE8-432F-96C9-E29C399BB88A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Async_Await", "Learning_Async_Await\Learning_Async_Await.csproj", "{5CF2FE32-5E33-4556-864D-61A38BDE99B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Dependency_Injection", "Learning_Dependency_Injection\Learning_Dependency_Injection.csproj", "{741546F6-428E-44F6-8576-C42B05289534}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_DI_ASPNETCORE", "Learning_DI_ASPNETCORE\Learning_DI_ASPNETCORE.csproj", "{36D7E43B-2208-41BB-B3A6-2EB704D53220}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Networking_HttpClient", "Learning_Networking_HTTP\Learning_Networking_HttpClient.csproj", "{E08F7167-CB0A-4B84-AA21-BBACADEDE1B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Networking_HttpMesssageHandler", "Learning_Networking_HttpMesssageHandler\Learning_Networking_HttpMesssageHandler.csproj", "{E7007D07-83A7-4D0A-91E6-BE10522B23A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Networking_HttpListener", "Learning_Networking_HttpListener\Learning_Networking_HttpListener.csproj", "{7EC3DF3D-272A-4CC0-A034-049D194005BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_EF", "Learning_EF\Learning_EF.csproj", "{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +35,34 @@ Global
 		{5856F0A3-BEE8-432F-96C9-E29C399BB88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5856F0A3-BEE8-432F-96C9-E29C399BB88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5856F0A3-BEE8-432F-96C9-E29C399BB88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF2FE32-5E33-4556-864D-61A38BDE99B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF2FE32-5E33-4556-864D-61A38BDE99B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF2FE32-5E33-4556-864D-61A38BDE99B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF2FE32-5E33-4556-864D-61A38BDE99B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741546F6-428E-44F6-8576-C42B05289534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741546F6-428E-44F6-8576-C42B05289534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741546F6-428E-44F6-8576-C42B05289534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741546F6-428E-44F6-8576-C42B05289534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D7E43B-2208-41BB-B3A6-2EB704D53220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D7E43B-2208-41BB-B3A6-2EB704D53220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D7E43B-2208-41BB-B3A6-2EB704D53220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D7E43B-2208-41BB-B3A6-2EB704D53220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08F7167-CB0A-4B84-AA21-BBACADEDE1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08F7167-CB0A-4B84-AA21-BBACADEDE1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08F7167-CB0A-4B84-AA21-BBACADEDE1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08F7167-CB0A-4B84-AA21-BBACADEDE1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7007D07-83A7-4D0A-91E6-BE10522B23A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7007D07-83A7-4D0A-91E6-BE10522B23A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7007D07-83A7-4D0A-91E6-BE10522B23A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7007D07-83A7-4D0A-91E6-BE10522B23A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC3DF3D-272A-4CC0-A034-049D194005BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC3DF3D-272A-4CC0-A034-049D194005BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC3DF3D-272A-4CC0-A034-049D194005BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC3DF3D-272A-4CC0-A034-049D194005BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

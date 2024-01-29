@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bB0oPWED/b77PLaO9o3DlpE72ZnMZ4SrQ3D9+AClJiPtanIqIZYAMXAZmfq+ggtfvt+v0EwZ9Qwi2VSM1H2v/A==",
+  "success": true,
+  "projectFilePath": "H:\\PRN221\\Project\\ASPNETCORE\\Learning_Cookie\\Learning_Cookie.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

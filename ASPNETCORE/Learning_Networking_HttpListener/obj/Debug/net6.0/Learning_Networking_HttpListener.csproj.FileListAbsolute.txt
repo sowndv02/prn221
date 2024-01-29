@@ -1,0 +1,17 @@
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\bin\Debug\net6.0\Learning_Networking_HttpListener.exe
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\bin\Debug\net6.0\Learning_Networking_HttpListener.deps.json
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\bin\Debug\net6.0\Learning_Networking_HttpListener.runtimeconfig.json
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\bin\Debug\net6.0\Learning_Networking_HttpListener.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\bin\Debug\net6.0\Learning_Networking_HttpListener.pdb
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\bin\Debug\net6.0\Newtonsoft.Json.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.csproj.AssemblyReference.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.GeneratedMSBuildEditorConfig.editorconfig
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.AssemblyInfoInputs.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.AssemblyInfo.cs
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.csproj.CoreCompileInputs.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.csproj.CopyComplete
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\refint\Learning_Networking_HttpListener.dll
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.pdb
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\Learning_Networking_HttpListener.genruntimeconfig.cache
+H:\PRN221\Project\ASPNETCORE\Learning_Networking_HttpListener\obj\Debug\net6.0\ref\Learning_Networking_HttpListener.dll
