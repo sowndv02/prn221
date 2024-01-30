@@ -57,9 +57,41 @@ app.UseEndpoints((endpoint) =>
         await context.Response.WriteAsync("Encoding");
     });
 
-    endpoint.MapGet("/Cookie", async (context) =>
+
+
+    // Cookies/Write
+    // Cookies/Read
+    endpoint.MapGet("/Cookies/{*action}", async (context) =>
     {
-        await context.Response.WriteAsync("Cookie");
+        string msg = "";
+        var menu = HtmlHelper.MenuTop(
+            HtmlHelper.DefaultMenuTopItems(), context.Request
+        );
+        var info = RequestProcess.RequestInfo(context.Request);
+
+        var action = context.GetRouteValue("action") ?? "Read";
+
+        if(action.ToString() == "Write")
+        {
+            // Tên - giá trị - Thời gian hiệu lực
+            var option = new CookieOptions()
+            {
+                Path = "/",
+                Expires = DateTime.Now.AddDays(1)
+            };
+            context.Response.Cookies.Append("product", "123212", option);
+            msg = "Cookie read successfully";
+        }
+        else
+        {
+            // Lấy danh sách các Header và giá trị  của nó, dùng Linq để lấy
+            var listcokie = context.Request.Cookies.Select((header) => $"{header.Key}: {header.Value}".HtmlTag("li"));
+            var cockiesHtml = string.Join("", listcokie).HtmlTag("ul");
+        }
+        var path = "<a class=\"btn btn-primary\" href=\"/Cookies/read\">Read cookies</a><a class=\"btn btn-danger\" href=\"/Cookies/Write\">Write cookies</a>";
+        path.HtmlTag("div", "container mt-4");
+        var html = HtmlHelper.HtmlDocument("COOKIE", menu + info.HtmlTag("div", "container"));
+        await context.Response.WriteAsync(html);
     });
 
     endpoint.MapGet("/Json", async (context) =>
@@ -81,7 +113,11 @@ app.UseEndpoints((endpoint) =>
 
     endpoint.MapGet("/Form", async (context) =>
     {
-        await context.Response.WriteAsync("Form");
+        string menu = HtmlHelper.MenuTop(HtmlHelper.DefaultMenuTopItems(), context.Request);
+        string formhtml = await RequestProcess.FormProcess(context.Request);
+        formhtml = formhtml.HtmlTag("div", "container");
+        string html = HtmlHelper.HtmlDocument("Form Post", (menu + formhtml));
+        await context.Response.WriteAsync(html);
     });
 });
 

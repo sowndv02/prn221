@@ -15,11 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_DI_ASPNETCORE", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Networking_HttpClient", "Learning_Networking_HTTP\Learning_Networking_HttpClient.csproj", "{E08F7167-CB0A-4B84-AA21-BBACADEDE1B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Networking_HttpMesssageHandler", "Learning_Networking_HttpMesssageHandler\Learning_Networking_HttpMesssageHandler.csproj", "{E7007D07-83A7-4D0A-91E6-BE10522B23A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Networking_HttpMesssageHandler", "Learning_Networking_HttpMesssageHandler\Learning_Networking_HttpMesssageHandler.csproj", "{E7007D07-83A7-4D0A-91E6-BE10522B23A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Networking_HttpListener", "Learning_Networking_HttpListener\Learning_Networking_HttpListener.csproj", "{7EC3DF3D-272A-4CC0-A034-049D194005BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Networking_HttpListener", "Learning_Networking_HttpListener\Learning_Networking_HttpListener.csproj", "{7EC3DF3D-272A-4CC0-A034-049D194005BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_EF", "Learning_EF\Learning_EF.csproj", "{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_EF", "Learning_EF\Learning_EF.csproj", "{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_ConfigApplication", "Learning_ConfigApplication\Learning_ConfigApplication.csproj", "{423E5A45-3CAE-46C1-A25D-BA6DABBA0133}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DC5E63E-945D-489B-9B08-8BE5032C9ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423E5A45-3CAE-46C1-A25D-BA6DABBA0133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423E5A45-3CAE-46C1-A25D-BA6DABBA0133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423E5A45-3CAE-46C1-A25D-BA6DABBA0133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423E5A45-3CAE-46C1-A25D-BA6DABBA0133}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

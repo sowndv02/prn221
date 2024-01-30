@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zvOutok1RoBAxq1fMa8CIyrYYsTsesgWGEkq/BjcI6H5LEGrhrMc5/u0VGrzlh2RjxpNOXRbuZqmAq1T9q1HYA==",
+  "dgSpecHash": "WDg7Ho8blfqYt8AzHOqHKidy5VK/uE22fWYKgMbCEtu3n3mPcltbWB38CPukmA2lQxkbTt2GfZ6oZEoeEtyvBg==",
   "success": true,
-  "projectFilePath": "H:\\PRN221\\Project\\ASPNETCORE\\Learning_Networking_HttpListener\\Learning_Networking_HttpListener.csproj",
+  "projectFilePath": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\ASPNETCORE\\Learning_Networking_HttpListener\\Learning_Networking_HttpListener.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\ADMIN\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

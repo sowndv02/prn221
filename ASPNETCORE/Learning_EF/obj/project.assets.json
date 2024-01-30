@@ -7821,23 +7821,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "H:\\Data\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\PRN221\\Project\\ASPNETCORE\\Learning_EF\\Learning_EF.csproj",
+      "projectUniqueName": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\ASPNETCORE\\Learning_EF\\Learning_EF.csproj",
       "projectName": "Learning_EF",
-      "projectPath": "H:\\PRN221\\Project\\ASPNETCORE\\Learning_EF\\Learning_EF.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "H:\\PRN221\\Project\\ASPNETCORE\\Learning_EF\\obj\\",
+      "projectPath": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\ASPNETCORE\\Learning_EF\\Learning_EF.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\ASPNETCORE\\Learning_EF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "H:\\Data\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7926,7 +7926,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
