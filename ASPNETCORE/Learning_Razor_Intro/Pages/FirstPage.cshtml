@@ -1,0 +1,62 @@
+﻿@*Ràng buộc kiểu dữ liệu *@
+@page "/rewriteurl/{id:int?}" 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelper
+@model Learning_Razor_Intro.Pages.FirstPageModel
+@{
+}
+
+
+<h1>First Page</h1>
+<strong>@System.DateTime.Now</strong>
+
+
+
+@{
+    var a = 2;
+    var b = 3;
+    <p>Sqrt of 2 = @Math.Sqrt(a)</p>
+    var idString = this.Request.RouteValues["id"] ?? "0";
+
+    int id = Int32.Parse(idString.ToString());
+}
+
+Nếu đổi URL thì phải sửa
+<a href="/Dichvu/Service1">Service1</a> 
+
+
+<a asp-page="FirstService"></a>
+@* Sử dụng taghelper *@
+<a asp-page="/login" asp-area="user">Login</a>
+
+
+
+Khai báo khi biên dịch se có function này
+@functions{
+
+    // OnGet, OnGetABC, OnGetXYZ.....
+    // OnPost, OnPostABC, OnPostXYZ.....
+    // Là các handler
+
+
+    // OnGet sẽ được gọi khi truy vấn đến trang với địa chỉ mặc định 
+    public void OnGet()
+    {
+
+
+    }
+
+    // Truy cập method get  sau URL?handler=xyz thì sẽ được goi
+    public void OnGetXYZ()
+    {
+        
+    }
+
+    string title { get; set; } = "SonDV"; //có thể gọi ở mọi nơi trong page
+
+    string Welcome(string name)     //có thể gọi ở mọi nơi trong page
+    {
+
+        return $"Welcome {name}";
+    }
+}
+

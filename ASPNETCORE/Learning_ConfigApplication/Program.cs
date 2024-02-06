@@ -4,8 +4,6 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
 app.MapGet("/ShowOptions", async (context) =>
 {
     // Thêm DI configuration

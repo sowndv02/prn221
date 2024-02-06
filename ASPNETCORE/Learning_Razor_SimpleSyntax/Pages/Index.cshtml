@@ -1,0 +1,61 @@
+﻿@*
+
+- Sử dụng @Html.Raw() để hiển thị html mà không bị encode thành text 
+- Nếu mở thể HTML => Tự xuất HTML
+
+- Sử dụng <text> để hiển thị text
+- Sử dụng @: Nó chỉ sd ở cuối câu lệnh
+- @page "url" : Set url cho page
+- @model ModelClassName: Cho biết nó sẽ thực thi handler ở class nào
+- @namespace: tương tự trong class
+- @using:tương tự Trong classs
+*@
+
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var hello = "<h1 class='text text-danger'>Xinchao</h1>";
+}
+
+<h1 class="display-4 text-danger">Razor Syntax</h1>
+
+
+
+<ul>
+    <li>@("<h1>Hello World!</h1>")</li> @* Lúc này thì khi hiển thị nó sẽ là text bth và được encode để hiển thị text *@
+    @*
+        Vậy để hiển thị html thì sao? => sử dụng @Html.Raw()
+    *@
+    <li>@Html.Raw(hello)</li>
+</ul>
+
+
+
+@{
+    var msg = "SonDV";
+    var age = 20;
+
+    void Welcome(string name, int age)
+    {
+        var msg = name + " " + age;
+        <p>@msg</p>
+    }
+
+}
+
+<p>@msg</p>
+
+@{
+    Welcome("SonDV", 18);
+    string[] products = new string[] { "Iphone", "Samsung", "Oppo" };
+    foreach(var name in products)
+    {
+        <text>[@name]</text>
+    }
+
+    foreach (var name in products)
+    {
+        @: [@name]
+    }
+}
