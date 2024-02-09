@@ -27,11 +27,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Session", "Learnin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_SendMail", "Learning_SendMail\Learning_SendMail.csproj", "{DFF11C65-4CCC-4C45-BF3E-5D5AE240EC60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Razor_Intro", "Learning_Razor_Intro\Learning_Razor_Intro.csproj", "{778720A4-D470-4444-8A74-B2849B066077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_Intro", "Learning_Razor_Intro\Learning_Razor_Intro.csproj", "{778720A4-D470-4444-8A74-B2849B066077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Razor_SimpleSyntax", "Learning_Razor_SimpleSyntax\Learning_Razor_SimpleSyntax.csproj", "{43BD7731-D960-49EB-B9B4-C0804F6114D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_SimpleSyntax", "Learning_Razor_SimpleSyntax\Learning_Razor_SimpleSyntax.csproj", "{43BD7731-D960-49EB-B9B4-C0804F6114D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Razor_Layout", "Learning_Razor_Layout\Learning_Razor_Layout.csproj", "{6935ACF0-247C-4B3D-9607-7CA78D0D8E0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_Layout", "Learning_Razor_Layout\Learning_Razor_Layout.csproj", "{6935ACF0-247C-4B3D-9607-7CA78D0D8E0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_ViewComponent_ViewPartial", "Learning_Razor_ViewComponent_ViewPartial\Learning_Razor_ViewComponent_ViewPartial.csproj", "{E4C38956-4577-40F5-9F43-BDCADE5041ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_TagHelper_HtmlHelper", "Learning_Razor_TagHelper_HtmlHelper\Learning_Razor_TagHelper_HtmlHelper.csproj", "{B5CE6193-A5E5-4437-A30D-6A921E389432}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_PageModel_ModelBinding", "Learning_Razor_PageModel_ModelBinding\Learning_Razor_PageModel_ModelBinding.csproj", "{816EEBCD-2FD3-47E3-8732-0C7EC54E5608}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_Validator_UploadFile", "Learning_Razor_Validator_UploadFile\Learning_Razor_Validator_UploadFile.csproj", "{19B2CE67-0352-41F9-B666-21FFBD1498AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_EF", "Learning_Razor_EF\Learning_Razor_EF.csproj", "{D7CC3197-3880-483A-8132-F7F6F6037102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Razor_Identity_Login", "Learning_Razor_Identity_Login\Learning_Razor_Identity_Login.csproj", "{53E52AE5-E95B-4E23-9696-032767FA8646}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +111,30 @@ Global
 		{6935ACF0-247C-4B3D-9607-7CA78D0D8E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6935ACF0-247C-4B3D-9607-7CA78D0D8E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6935ACF0-247C-4B3D-9607-7CA78D0D8E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4C38956-4577-40F5-9F43-BDCADE5041ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4C38956-4577-40F5-9F43-BDCADE5041ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4C38956-4577-40F5-9F43-BDCADE5041ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4C38956-4577-40F5-9F43-BDCADE5041ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CE6193-A5E5-4437-A30D-6A921E389432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CE6193-A5E5-4437-A30D-6A921E389432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CE6193-A5E5-4437-A30D-6A921E389432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CE6193-A5E5-4437-A30D-6A921E389432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816EEBCD-2FD3-47E3-8732-0C7EC54E5608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816EEBCD-2FD3-47E3-8732-0C7EC54E5608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816EEBCD-2FD3-47E3-8732-0C7EC54E5608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816EEBCD-2FD3-47E3-8732-0C7EC54E5608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B2CE67-0352-41F9-B666-21FFBD1498AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B2CE67-0352-41F9-B666-21FFBD1498AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B2CE67-0352-41F9-B666-21FFBD1498AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B2CE67-0352-41F9-B666-21FFBD1498AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CC3197-3880-483A-8132-F7F6F6037102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CC3197-3880-483A-8132-F7F6F6037102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CC3197-3880-483A-8132-F7F6F6037102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CC3197-3880-483A-8132-F7F6F6037102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E52AE5-E95B-4E23-9696-032767FA8646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E52AE5-E95B-4E23-9696-032767FA8646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E52AE5-E95B-4E23-9696-032767FA8646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E52AE5-E95B-4E23-9696-032767FA8646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

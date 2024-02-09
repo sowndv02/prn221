@@ -1,0 +1,33 @@
+﻿@page
+@model Learning_Razor_Validator_UploadFile.Pages.ContactModel
+@{
+}
+
+<h2 class="display-4">Nhập thông tin</h2>
+<form method="post" asp-page="Contact" enctype="multipart/form-data">
+    <div asp-validation-summary="All"></div>
+
+
+    <label asp-for="@Model.customerInfo.CustomerName"></label>
+    <input asp-for="customerInfo.CustomerName" />
+    <span asp-validation-for="customerInfo.CustomerName"></span>
+    <br/>
+    <label asp-for="customerInfo.Email"></label>
+    <input asp-for="customerInfo.Email" />
+    <span asp-validation-for="customerInfo.Email"></span><br />
+    <label asp-for="customerInfo.YearOfBirth"></label>
+    <input asp-for="customerInfo.YearOfBirth" />
+    <span asp-validation-for="customerInfo.YearOfBirth"></span><br />
+
+    <label asp-for="FileUpload"></label>
+    <input asp-for="FileUpload" />
+    <span asp-validation-for="FileUpload"></span><br />
+
+
+    <label asp-for="FileUploads"></label>
+    <input asp-for="FileUploads" />
+    <span asp-validation-for="FileUploads"></span><br />
+
+
+</form>
+<p>@Model.Message</p>

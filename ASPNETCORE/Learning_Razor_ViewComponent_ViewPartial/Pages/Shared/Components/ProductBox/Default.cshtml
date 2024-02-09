@@ -1,0 +1,10 @@
+﻿@using Learning_Razor_ViewComponent_ViewPartial.Models
+@model List<Product>
+
+
+@foreach(var product in Model)
+{
+    @product.Name
+    @product.Description
+    @product.Price
+}

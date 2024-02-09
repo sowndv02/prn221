@@ -1,0 +1,48 @@
+﻿@page
+@using Learning_Razor_ViewComponent_ViewPartial.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<form action="post">
+    <input type="text" name="username" />
+    <button>Submit</button>
+</form>
+@await Html.PartialAsync("_Message");
+
+@{
+    var product1 = new Product() { Name = "ProductName1", Description = "Product1", Price = 1 };
+    var product2 = new Product() { Name = "ProductName2", Description = "Product2", Price = 2 };
+    var product3 = new Product() { Name = "ProductName3", Description = "Product3", Price = 3 };
+
+}
+<partial name="_productItems" model="product1"/>
+@await Html.PartialAsync("_productItems", product2)
+
+@{
+    await Html.RenderPartialAsync("_productItems", product3);
+}
+
+@{
+    var products = new List<Product>()
+    {
+        new Product() { Name = "ProductName1", Description = "Product1", Price = 1 },
+        new Product() { Name = "ProductName2", Description = "Product2", Price = 2 },
+        new Product() { Name = "ProductName3", Description = "Product3", Price = 3 }
+    };
+
+    foreach(var product in products)
+    {
+        <partial name="_productItems" model="product" />
+    }
+}
+
+    @await Component.InvokeAsync("ProductBox", true)
