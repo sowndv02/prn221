@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_Validator_Up
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_EF", "Learning_Razor_EF\Learning_Razor_EF.csproj", "{D7CC3197-3880-483A-8132-F7F6F6037102}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learning_Razor_Identity_Login", "Learning_Razor_Identity_Login\Learning_Razor_Identity_Login.csproj", "{53E52AE5-E95B-4E23-9696-032767FA8646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning_Razor_Identity_Login", "Learning_Razor_Identity_Login\Learning_Razor_Identity_Login.csproj", "{53E52AE5-E95B-4E23-9696-032767FA8646}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

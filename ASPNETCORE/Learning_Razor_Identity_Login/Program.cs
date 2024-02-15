@@ -7,11 +7,51 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+//// Add Login other service
+//builder.Services.AddAuthentication()
+//    .AddGoogle(googleOptions =>
+//    {
+//        /*
+//         - Có 2 lý do có thể kh login đc
+//            + Có tài khoản, chưa lk với dịch vụ ngoài => Liên kết tk với dịch vụ
+//            + Chưa có tk => Tạo tk, liên kết, đăng nhập
+//        */ 
+//        // Đọc thông tin Authentication:Google từ appsettings.json
+//        IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
+
+//        // Thiết lập ClientID và ClientSecret để truy cập API google
+//        googleOptions.ClientId = googleAuthNSection["ClientId"];
+//        googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
+//        // Cấu hình Url callback lại từ Google (không thiết lập thì mặc định là /signin-google)
+//        googleOptions.CallbackPath = "/dang-nhap-tu-google";
+
+//    });
 // Đăng ký Idenetity
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<MyBlogContext>()
     .AddDefaultTokenProviders();
 
+
+// Tạo policy
+builder.Services.AddAuthorization(options => 
+{
+    //options.AddPolicy("NamePolicy", policyBuilder =>
+    //{
+    //    // Điều kiện của policy
+    //});
+
+    options.AddPolicy("AllowEditRole", policyBuilder =>
+    {
+        // Điều kiện của policy
+        policyBuilder.RequireAuthenticatedUser(); // User phải đăng nhập
+        policyBuilder.RequireRole("Admin"); // User phải có role là admin và editor 
+        policyBuilder.RequireRole("Editor");
+
+        policyBuilder.RequireClaim("NameClaim", "ValueClaim1", "ValueClaim2"); // Xác thực theo claim: Claim-based authorization
+        policyBuilder.RequireClaim("NameClaim", new string[] {}); 
+    });
+
+});
 
 // Sử dụng UI 
 //builder.Services.AddDefaultIdentity<AppUser>()
@@ -47,10 +87,10 @@ builder.Services.Configure<IdentityOptions>(options => {
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = true;  // Email là duy nhất
 
-    // Cấu hình đăng nhập.
-    options.SignIn.RequireConfirmedEmail = true;            // Cấu hình xác thực địa chỉ email (email phải tồn tại)
-    options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
-    options.SignIn.RequireConfirmedAccount = true; // Để xác thực email thì mới cho login
+    //// Cấu hình đăng nhập.
+    //options.SignIn.RequireConfirmedEmail = true;            // Cấu hình xác thực địa chỉ email (email phải tồn tại)
+    //options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
+    //options.SignIn.RequireConfirmedAccount = true; // Để xác thực email thì mới cho login
 });
 var app = builder.Build();
 
@@ -98,11 +138,31 @@ dotnet add package Microsoft.AspNetCore.Authentication.OpenIDConnect
 dotnet add package Microsoft.AspNetCore.Authentication.Twitter
 dotnet add package MailKit
 dotnet add package MimeKit
+dotnet add package Microsoft.AspNetCore.Authentication.Facebook
+dotnet add package Microsoft.AspNetCore.Authentication.Google
+dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount
+dotnet add package Microsoft.AspNetCore.Authentication.Twitter
+
 
 
 - Hô trợ
     - Authentication: Xác thực danh tính: Login, Logout
     - Authorization: Xác thực quyền truy cập
+        + Role-Base authorization - xác thực theo vai trò
+            Role: Index, Create, Edit, Delete
+            [Authorize(Roles = "role1,role2")]: user phải đăng nhập và có 1 tron các role sau sẽ được đăng nhập
+            Nếu tách ra từng dòng thì se yc user phải có tất cả role đó mới đc truy cập
+        + Policy-based authorization: 
+            [Authorize(Policy = "AllowEditRole")]: cho phép user có policy thoả man thì edit 
+        + Claims-based authorization: 
+            Claim: Đặc tính, tính chất của 1 đối tượng 
+            Ex:
+                Bằng lái B2(Role): Được lái xe 4 chô
+                    Trên bằng B2 có: Ngày sinh, giới tính..... => Claim
+                Mua rượu ( > 18 tuổi)
+                    Kiểm tra ngày sinh: Claim-based authorization
+
+
     - Quản lý user: Sigin up, User, Role....
 
 - DB
