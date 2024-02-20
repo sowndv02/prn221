@@ -1,6 +1,6 @@
 ﻿@page
 @model LoadDB_EF_RazorPage.Pages.Stu.IndexModel
-
+<script src="/lib/jquery/dist/jquery.min.js"></script>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -11,6 +11,36 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<script>
+    function my(){
+        var form = document.getElementById('fm').;
+        if (form) {
+            form.onsubmit();
+        }
+    }
+    // $(document).ready(function () {
+    //     $(".chk").click(function () {
+    //         $("button").click();
+    //         $("#sub").click();
+    //     })
+    // })
+</script>
+
+<form method="post" id="fm"  asp-page="/Stu/Index">
+    <input type="checkbox" onclick="my()" name="all" value="all" class="chk"
+    @(Model.list.Contains("all") ? "checked" : "") />All <br />
+    @foreach (var d in Model.Departments)
+    {
+        <input onclick="my()" type="checkbox" name='@("chk" + d.Id)' value="@d.Id" class="chk"
+        @(Model.list.Contains(d.Id) ? "checked":"") /> @d.Name <br />
+        <input  type="submit" name="submit" value="Search" id="sub" hidden/>
+        <button id="btnSubmit" hidden>Submit</button>
+    }   
+
+</form>
+
+
 <table class="table">
     <thead>
         <tr>

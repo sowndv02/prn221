@@ -23,9 +23,9 @@ namespace LoadDB_EF_RazorPage.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // optionsBuilder.UseSqlServer("server=COOKIE\\SQLEXPRESS;database=PRN211_1;uid=sa;password=123456");
+                optionsBuilder.UseSqlServer("server=COOKIE\\SQLEXPRESS;database=PRN211_1;uid=sa;password=123456");
 
-                optionsBuilder.UseSqlServer("server=DESKTOP-V87NI7H\\SQLEXPRESS;database=PRN211_1;uid=sa;password=sa123456");
+                //optionsBuilder.UseSqlServer("server=DESKTOP-V87NI7H\\SQLEXPRESS;database=PRN211_1;uid=sa;password=sa123456");
             }
         }
 
