@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EntityFramework_With_SignalR.props" />
+</Project>

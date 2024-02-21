@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LoadDB_EF_RazorPage
 build_property.RootNamespace = LoadDB_EF_RazorPage
-build_property.ProjectDir = D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\LoadDB_EF_RazorPage\
+build_property.ProjectDir = H:\PRN221\Project\PRN221\LoadDB_EF_RazorPage\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Learning\Semester7\PRN221\Spring2024\project\PRN221\LoadDB_EF_RazorPage
+build_property.MSBuildProjectDirectory = H:\PRN221\Project\PRN221\LoadDB_EF_RazorPage
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Error.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Index.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Privacy.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Add.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Details.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Edit.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Index.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Search.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Students/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Create.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Delete.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Details.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Edit.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Index.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/_ViewImports.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/_ViewStart.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Shared/_Layout.cshtml]
+[H:/PRN221/Project/PRN221/LoadDB_EF_RazorPage/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bygxkfshnl
