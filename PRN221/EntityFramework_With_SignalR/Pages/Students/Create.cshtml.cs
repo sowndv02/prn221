@@ -14,9 +14,9 @@ namespace EntityFramework_With_SignalR.Pages.Students
     public class CreateModel : PageModel
     {
         private readonly EntityFramework_With_SignalR.Models.PRN211_1Context _context;
-        private readonly SignalrServer _signalRHub;
+        private readonly IHubContext<SignalrServer> _signalRHub;
 
-        public CreateModel(EntityFramework_With_SignalR.Models.PRN211_1Context context, SignalrServer signalRHub)
+        public CreateModel(EntityFramework_With_SignalR.Models.PRN211_1Context context, IHubContext<SignalrServer> signalRHub)
         {
             _context = context;
             _signalRHub = signalRHub;

@@ -1,9 +1,10 @@
 ﻿$(() => {
     LoadProdData();
+
     var connection = new signalR.HubConnectionBuilder().withUrl("/signalrServer").build();
     connection.start();
 
-    connection.on("LoadStudents", function () {
+    connection.on('LoadStudents', function () {
         LoadProdData();
     })
 
@@ -11,10 +12,11 @@
 
     function LoadProdData() {
         var tr = '';
+
         $.ajax({
-            url: '/Students/GetStudents',
+            url: '/Students/OnGetStudents',
             method: 'GET',
-            sucess: (result) => {
+            success: (result) => {
                 $.each(result, (k, v) => {
                     tr += `<tr>
                          <td> ${v.Id} </td>

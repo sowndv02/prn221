@@ -11,7 +11,9 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+
+
+@* <table class="table">
     <thead>
         <tr>
             <th>
@@ -58,7 +60,21 @@
         </tr>
 }
     </tbody>
+</table> *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>GPA</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
 </table>
 
-<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
-<script src="~/js/site.js"></script>

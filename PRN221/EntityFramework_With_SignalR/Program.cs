@@ -2,6 +2,7 @@
 
 using EntityFramework_With_SignalR.Models;
 using EntityFramework_With_SignalR.SignalRConfig;
+using Microsoft.AspNetCore.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +11,6 @@ builder.Services.AddRazorPages();
 
 
 builder.Services.AddDbContext<PRN211_1Context>();
-
-builder.Services.AddSingleton<SignalrServer>();
-
 builder.Services.AddSignalR();
 
 var app = builder.Build();

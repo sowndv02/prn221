@@ -28,5 +28,11 @@ namespace EntityFramework_With_SignalR.Pages.Students
                 .Include(s => s.Depart).ToListAsync();
             }
         }
+
+        public IActionResult OnGetStudents()
+        {
+            var students = _context.Students.Include(s => s.Depart).ToList();
+            return new JsonResult(students);
+        }
     }
 }
