@@ -2,7 +2,7 @@
 @model SEP_Management.Areas.Admin.Pages.RoleClaims.CreateModel
 
 @{
-    ViewData["Title"] = "Tạo Claim";
+    ViewData["Title"] = "Create Claim";
 }
 
 <h1>Tạo Claim cho role @Model.role.Name</h1>
@@ -31,7 +31,7 @@
 </div>
 
 <div>
-    <a asp-page="Index" asp-route-roleid="@Model.role.Id">Quay lại danh sách</a>
+    <a asp-page="Index" asp-route-roleid="@Model.role.Id">List Claims</a>
 </div>
 
 @section Scripts {

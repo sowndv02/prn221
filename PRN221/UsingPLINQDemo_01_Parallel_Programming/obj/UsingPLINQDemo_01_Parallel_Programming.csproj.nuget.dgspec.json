@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\PRN221\\Project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj": {}
+    "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj": {}
   },
   "projects": {
-    "H:\\PRN221\\Project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj": {
+    "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\PRN221\\Project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj",
+        "projectUniqueName": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj",
         "projectName": "UsingPLINQDemo_01_Parallel_Programming",
-        "projectPath": "H:\\PRN221\\Project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "H:\\PRN221\\Project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\obj\\",
+        "projectPath": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\UsingPLINQDemo_01_Parallel_Programming.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\UsingPLINQDemo_01_Parallel_Programming\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "H:\\Data\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

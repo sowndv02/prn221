@@ -1,7 +1,7 @@
 ﻿@page
 @model SEP_Management.Areas.Admin.Pages.RoleClaims.DeleteModel
 {
-    ViewData["Title"] = "Xóa Claim";
+    ViewData["Title"] = "Delete Claim";
 }
 
 <h1>Xóa</h1>
@@ -28,6 +28,6 @@
     <form method="post">
         <input type="hidden" asp-for="EditClaim.Id" />
         <input type="submit" value="Xóa" class="btn btn-danger" /> |
-        <a asp-page="./Index" asp-route-roleid="@Model.role.Id">Quay lại danh sách claim</a>
+        <a asp-page="./Index" asp-route-roleid="@Model.role.Id">List claim</a>
     </form>
 </div>

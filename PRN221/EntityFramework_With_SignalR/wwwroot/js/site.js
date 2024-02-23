@@ -14,7 +14,7 @@
         var tr = '';
 
         $.ajax({
-            url: '/Students/OnGetStudents',
+            url: '/Students/Index',
             method: 'GET',
             success: (result) => {
                 $.each(result, (k, v) => {
