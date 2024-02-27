@@ -19,12 +19,15 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using SEP_Management.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.FileSystemGlobbing.Internal;
+using System.Text.RegularExpressions;
 
 namespace SEP_Management.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class ExternalLoginModel : PageModel
     {
+        private const string PATTERN_DOMAIN_FPT = @"\bfpt\b";
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly IUserStore<User> _userStore;
@@ -131,10 +134,17 @@ namespace SEP_Management.Areas.Identity.Pages.Account
                 ProviderDisplayName = info.ProviderDisplayName;
                 if (info.Principal.HasClaim(c => c.Type == ClaimTypes.Email))
                 {
-                    Input = new InputModel
+                    if(Regex.IsMatch(info.Principal.FindFirstValue(ClaimTypes.Email), PATTERN_DOMAIN_FPT, RegexOptions.IgnoreCase))
                     {
-                        Email = info.Principal.FindFirstValue(ClaimTypes.Email)
-                    };
+                        Input = new InputModel
+                        {
+                            Email = info.Principal.FindFirstValue(ClaimTypes.Email)
+                        };
+                    }
+                    else
+                    {
+                        return RedirectToPage("./AccessDenied");
+                    }
                 }
                 return Page();
             }
@@ -165,7 +175,7 @@ namespace SEP_Management.Areas.Identity.Pages.Account
                     externalUser = await _userManager.FindByEmailAsync(externalEmail);
                 }
 
-                if((registedUser != null) &&(externalUser != null))
+                if((registedUser != null) && (externalUser != null))
                 {
                     if(registedUser.Id  == externalUser.Id)
                     {

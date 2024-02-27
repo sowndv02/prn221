@@ -52,6 +52,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/StudentWithJs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFdpdGhKc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/StudentWithJs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFdpdGhKc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/StudentWithJs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFdpdGhKc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/StudentWithJs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFdpdGhKc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/StudentWithJs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFdpdGhKc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Learning/Semester7/PRN221/Spring2024/project/PRN221/LoadDB_EF_RazorPage/Pages/Stu/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
