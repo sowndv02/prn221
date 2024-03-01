@@ -73,19 +73,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsynchronousDemo_03", "Asyn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChatWithSignalR", "SimpleChatWithSignalR\SimpleChatWithSignalR.csproj", "{215ADCCE-7C73-40F3-B3B8-D2FC092EA508}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework_With_SignalR", "EntityFramework_With_SignalR\EntityFramework_With_SignalR.csproj", "{D868A141-53C0-4190-8307-6D894C10A28C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_With_SignalR_Razor", "EntityFramework_With_SignalR\EF_With_SignalR_Razor.csproj", "{D868A141-53C0-4190-8307-6D894C10A28C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWorkerService01", "DemoWorkerService01\DemoWorkerService01.csproj", "{15281101-BFA3-46D5-B4A1-E381F7AB5A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoWorkerService01", "DemoWorkerService01\DemoWorkerService01.csproj", "{15281101-BFA3-46D5-B4A1-E381F7AB5A28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRateService_DemoWorkerService", "ExchangeRateService_DemoWorkerService\ExchangeRateService_DemoWorkerService.csproj", "{35D384AE-E4B3-4702-AAD3-C7CB7DCBDAE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRateService_DemoWorkerService", "ExchangeRateService_DemoWorkerService\ExchangeRateService_DemoWorkerService.csproj", "{35D384AE-E4B3-4702-AAD3-C7CB7DCBDAE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWorkerService02", "DemoWorkerService02\DemoWorkerService02.csproj", "{059CA485-36A0-46A8-BB00-0F628EFF858A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoWorkerService02", "DemoWorkerService02\DemoWorkerService02.csproj", "{059CA485-36A0-46A8-BB00-0F628EFF858A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWorkerService03", "DemoWorkerService03\DemoWorkerService03.csproj", "{51E78EC5-C33B-417B-8671-4AD207B2B6D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoWorkerService03", "DemoWorkerService03\DemoWorkerService03.csproj", "{51E78EC5-C33B-417B-8671-4AD207B2B6D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertJsonToXML", "ConvertJsonToXML\ConvertJsonToXML.csproj", "{067A5871-296B-4327-829A-24B60FC76915}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertJsonToXML", "ConvertJsonToXML\ConvertJsonToXML.csproj", "{067A5871-296B-4327-829A-24B60FC76915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertXMLToJson", "ConvertXMLToJson\ConvertXMLToJson.csproj", "{6EA461C0-B941-4FF1-BF75-DBFDA863A8F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertXMLToJson", "ConvertXMLToJson\ConvertXMLToJson.csproj", "{6EA461C0-B941-4FF1-BF75-DBFDA863A8F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_With_SignalR_MVC", "EF_With_SignalR_MVC\EF_With_SignalR_MVC.csproj", "{0438E6F4-4C1E-4935-A073-9C8F74E3CA18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazoPagesLabA1", "RazoPagesLabA1\RazoPagesLabA1.csproj", "{153B8C44-4006-485C-9EB9-35F56608BE46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -261,6 +265,14 @@ Global
 		{6EA461C0-B941-4FF1-BF75-DBFDA863A8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EA461C0-B941-4FF1-BF75-DBFDA863A8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EA461C0-B941-4FF1-BF75-DBFDA863A8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0438E6F4-4C1E-4935-A073-9C8F74E3CA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0438E6F4-4C1E-4935-A073-9C8F74E3CA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0438E6F4-4C1E-4935-A073-9C8F74E3CA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0438E6F4-4C1E-4935-A073-9C8F74E3CA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{153B8C44-4006-485C-9EB9-35F56608BE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153B8C44-4006-485C-9EB9-35F56608BE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153B8C44-4006-485C-9EB9-35F56608BE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153B8C44-4006-485C-9EB9-35F56608BE46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

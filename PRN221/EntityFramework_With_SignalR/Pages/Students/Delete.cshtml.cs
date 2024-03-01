@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using EntityFramework_With_SignalR.Models;
+using Microsoft.AspNetCore.SignalR;
+using EntityFramework_With_SignalR.SignalRConfig;
 
 namespace EntityFramework_With_SignalR.Pages.Students
 {
     public class DeleteModel : PageModel
     {
         private readonly EntityFramework_With_SignalR.Models.PRN211_1Context _context;
-
-        public DeleteModel(EntityFramework_With_SignalR.Models.PRN211_1Context context)
+        private readonly IHubContext<SignalrServer> _hubContext;
+        public DeleteModel(EntityFramework_With_SignalR.Models.PRN211_1Context context, IHubContext<SignalrServer> hubContext)
         {
             _context = context;
+            _hubContext = hubContext;
         }
 
         [BindProperty]
@@ -54,6 +57,7 @@ namespace EntityFramework_With_SignalR.Pages.Students
                 Student = student;
                 _context.Students.Remove(Student);
                 await _context.SaveChangesAsync();
+                await _hubContext.Clients.All.SendAsync("LoadAll");
             }
 
             return RedirectToPage("./Index");

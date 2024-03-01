@@ -1,0 +1,103 @@
+﻿@page
+@model SEP_Management.Areas.SubjectManager.Pages.Classes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].ClassCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].ClassDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].SemesterId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].SubjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].ManagerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].GitlabId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].AccessToken)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].UpdatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Class) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemesterId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GitlabId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessToken)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ClassId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ClassId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ClassId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

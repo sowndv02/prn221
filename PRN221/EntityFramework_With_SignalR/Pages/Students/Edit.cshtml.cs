@@ -58,7 +58,7 @@ namespace EntityFramework_With_SignalR.Pages.Students
                 await _context.SaveChangesAsync();
 
                 // Send client
-                await _signalRHub.Clients.All.SendAsync("LoadStudents");
+                await _signalRHub.Clients.All.SendAsync("LoadAll");
             }
             catch (DbUpdateConcurrencyException)
             {

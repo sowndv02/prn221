@@ -1,0 +1,86 @@
+﻿@page
+@model SEP_Management.Areas.SubjectManager.Pages.Subjectss.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Subject</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Subject.SubjectId" />
+            <div class="form-group">
+                <label asp-for="Subject.SubjectCode" class="control-label"></label>
+                <input asp-for="Subject.SubjectCode" class="form-control" />
+                <span asp-validation-for="Subject.SubjectCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.SubjectName" class="control-label"></label>
+                <input asp-for="Subject.SubjectName" class="form-control" />
+                <span asp-validation-for="Subject.SubjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.ManagerId" class="control-label"></label>
+                <select asp-for="Subject.ManagerId" class="form-control" asp-items="ViewBag.ManagerId"></select>
+                <span asp-validation-for="Subject.ManagerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.IsActive" class="control-label"></label>
+                <input asp-for="Subject.IsActive" class="form-control" />
+                <span asp-validation-for="Subject.IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.CreatedBy" class="control-label"></label>
+                <input asp-for="Subject.CreatedBy" class="form-control" />
+                <span asp-validation-for="Subject.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.UpdatedBy" class="control-label"></label>
+                <input asp-for="Subject.UpdatedBy" class="form-control" />
+                <span asp-validation-for="Subject.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.Description" class="control-label"></label>
+                <input asp-for="Subject.Description" class="form-control" />
+                <span asp-validation-for="Subject.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.TimeAllocation" class="control-label"></label>
+                <input asp-for="Subject.TimeAllocation" class="form-control" />
+                <span asp-validation-for="Subject.TimeAllocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.PassGrade" class="control-label"></label>
+                <input asp-for="Subject.PassGrade" class="form-control" />
+                <span asp-validation-for="Subject.PassGrade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.CreatedAt" class="control-label"></label>
+                <input asp-for="Subject.CreatedAt" class="form-control" />
+                <span asp-validation-for="Subject.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject.UpdatedAt" class="control-label"></label>
+                <input asp-for="Subject.UpdatedAt" class="form-control" />
+                <span asp-validation-for="Subject.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

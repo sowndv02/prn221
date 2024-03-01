@@ -1,0 +1,104 @@
+﻿@page
+@model SEP_Management.Areas.ClassManager.Pages.Projects.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Project.ProjectCode" class="control-label"></label>
+                <input asp-for="Project.ProjectCode" class="form-control" />
+                <span asp-validation-for="Project.ProjectCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.ProjectEnName" class="control-label"></label>
+                <input asp-for="Project.ProjectEnName" class="form-control" />
+                <span asp-validation-for="Project.ProjectEnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.ProjectVieName" class="control-label"></label>
+                <input asp-for="Project.ProjectVieName" class="form-control" />
+                <span asp-validation-for="Project.ProjectVieName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.ProjectDescription" class="control-label"></label>
+                <input asp-for="Project.ProjectDescription" class="form-control" />
+                <span asp-validation-for="Project.ProjectDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Status" class="control-label"></label>
+                <input asp-for="Project.Status" class="form-control" />
+                <span asp-validation-for="Project.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.CreatedBy" class="control-label"></label>
+                <input asp-for="Project.CreatedBy" class="form-control" />
+                <span asp-validation-for="Project.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.UpdatedBy" class="control-label"></label>
+                <input asp-for="Project.UpdatedBy" class="form-control" />
+                <span asp-validation-for="Project.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.ClassId" class="control-label"></label>
+                <select asp-for="Project.ClassId" class ="form-control" asp-items="ViewBag.ClassId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.GroupName" class="control-label"></label>
+                <input asp-for="Project.GroupName" class="form-control" />
+                <span asp-validation-for="Project.GroupName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.MentorId" class="control-label"></label>
+                <input asp-for="Project.MentorId" class="form-control" />
+                <span asp-validation-for="Project.MentorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.CoMentorId" class="control-label"></label>
+                <input asp-for="Project.CoMentorId" class="form-control" />
+                <span asp-validation-for="Project.CoMentorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.AccessToken" class="control-label"></label>
+                <input asp-for="Project.AccessToken" class="form-control" />
+                <span asp-validation-for="Project.AccessToken" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.Url" class="control-label"></label>
+                <input asp-for="Project.Url" class="form-control" />
+                <span asp-validation-for="Project.Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.CreatedAt" class="control-label"></label>
+                <input asp-for="Project.CreatedAt" class="form-control" />
+                <span asp-validation-for="Project.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Project.UpdatedAt" class="control-label"></label>
+                <input asp-for="Project.UpdatedAt" class="form-control" />
+                <span asp-validation-for="Project.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

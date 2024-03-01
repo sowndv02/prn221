@@ -1,0 +1,90 @@
+﻿@page
+@model SEP_Management.Areas.SubjectManager.Pages.Classes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Class</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Class.ClassCode" class="control-label"></label>
+                <input asp-for="Class.ClassCode" class="form-control" />
+                <span asp-validation-for="Class.ClassCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.ClassDetails" class="control-label"></label>
+                <input asp-for="Class.ClassDetails" class="form-control" />
+                <span asp-validation-for="Class.ClassDetails" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.SemesterId" class="control-label"></label>
+                <input asp-for="Class.SemesterId" class="form-control" />
+                <span asp-validation-for="Class.SemesterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.SubjectId" class="control-label"></label>
+                <input asp-for="Class.SubjectId" class="form-control" />
+                <span asp-validation-for="Class.SubjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.ManagerId" class="control-label"></label>
+                <input asp-for="Class.ManagerId" class="form-control" />
+                <span asp-validation-for="Class.ManagerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.Status" class="control-label"></label>
+                <input asp-for="Class.Status" class="form-control" />
+                <span asp-validation-for="Class.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.CreatedBy" class="control-label"></label>
+                <input asp-for="Class.CreatedBy" class="form-control" />
+                <span asp-validation-for="Class.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.UpdatedBy" class="control-label"></label>
+                <input asp-for="Class.UpdatedBy" class="form-control" />
+                <span asp-validation-for="Class.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.GitlabId" class="control-label"></label>
+                <input asp-for="Class.GitlabId" class="form-control" />
+                <span asp-validation-for="Class.GitlabId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.AccessToken" class="control-label"></label>
+                <input asp-for="Class.AccessToken" class="form-control" />
+                <span asp-validation-for="Class.AccessToken" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.CreatedAt" class="control-label"></label>
+                <input asp-for="Class.CreatedAt" class="form-control" />
+                <span asp-validation-for="Class.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.UpdatedAt" class="control-label"></label>
+                <input asp-for="Class.UpdatedAt" class="form-control" />
+                <span asp-validation-for="Class.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

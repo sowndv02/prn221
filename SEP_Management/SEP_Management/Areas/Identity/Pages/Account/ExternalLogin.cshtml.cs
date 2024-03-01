@@ -193,11 +193,13 @@ namespace SEP_Management.Areas.Identity.Pages.Account
                     }
                 }
 
-                if((externalEmail != null) && (registedUser == null))
-                {
-                    ModelState.AddModelError(string.Empty, "The external login was not added.");
-                    return Page();
-                }
+
+                // Security advantage
+                //if((externalEmail != null) && (registedUser == null))
+                //{
+                //    ModelState.AddModelError(string.Empty, "The external login was not added.");
+                //    return Page();
+                //}
 
                 if((externalEmail == null) && (externalEmail == Input.Email))
                 {

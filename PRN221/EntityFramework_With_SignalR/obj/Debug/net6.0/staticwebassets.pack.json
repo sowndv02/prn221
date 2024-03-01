@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\EntityFramework_With_SignalR\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EntityFramework_With_SignalR.bundle.scp.css",
-      "PackagePath": "staticwebassets\\EntityFramework_With_SignalR.bundle.scp.css"
+      "Id": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\EntityFramework_With_SignalR\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EF_With_SignalR_Razor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EF_With_SignalR_Razor.bundle.scp.css"
     },
     {
       "Id": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\EntityFramework_With_SignalR\\wwwroot\\css\\site.css",
@@ -11,6 +11,10 @@
     {
       "Id": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\EntityFramework_With_SignalR\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\EntityFramework_With_SignalR\\wwwroot\\js\\othersite.js",
+      "PackagePath": "staticwebassets\\js\\othersite.js"
     },
     {
       "Id": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\EntityFramework_With_SignalR\\wwwroot\\js\\site.js",
@@ -249,20 +253,20 @@
       "PackagePath": "staticwebassets\\microsoft\\signalr\\dist\\browser\\signalr.js"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EntityFramework_With_SignalR.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EF_With_SignalR_Razor.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EntityFramework_With_SignalR.props",
-      "PackagePath": "build\\EntityFramework_With_SignalR.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EF_With_SignalR_Razor.props",
+      "PackagePath": "build\\EF_With_SignalR_Razor.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EntityFramework_With_SignalR.props",
-      "PackagePath": "buildMultiTargeting\\EntityFramework_With_SignalR.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EF_With_SignalR_Razor.props",
+      "PackagePath": "buildMultiTargeting\\EF_With_SignalR_Razor.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EntityFramework_With_SignalR.props",
-      "PackagePath": "buildTransitive\\EntityFramework_With_SignalR.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EF_With_SignalR_Razor.props",
+      "PackagePath": "buildTransitive\\EF_With_SignalR_Razor.props"
     }
   ],
   "ElementsToRemove": []

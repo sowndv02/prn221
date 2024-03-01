@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-
 builder.Services.AddDbContext<PRN211_1Context>();
 builder.Services.AddSignalR();
 
@@ -24,11 +23,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.MapHub<SignalrServer>("hub");
+
 app.UseAuthorization();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapHub<SignalrServer>("/signalrServer");
-});
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapHub<SignalrServer>("/signalrServer");
+//});
 app.MapRazorPages();
 
 app.Run();

@@ -1,0 +1,103 @@
+﻿@page
+@model SEP_Management.Areas.ClassManager.Pages.Milestones.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].MinestoneName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].GitlabId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].UpdatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestone[0].Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Milestone) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinestoneName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GitlabId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.ClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.MilestoneId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.MilestoneId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MilestoneId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
