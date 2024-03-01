@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SCpGxtpmnKKdRfaPAe0hOtwSHSpEJ+XWjxWhLVIeT6aQ1LNJDh3KELtgg816VYVMSA+qoEDIpke8BeNIbbIahQ==",
+  "dgSpecHash": "SHrVVRcp+DrR8uzoCyrEDNbDf7i+2Fqiy35t5OAFykCsQkhXMDyCIVLleom65OdtVqCAt925NJLay19pIECvpg==",
   "success": true,
-  "projectFilePath": "D:\\Learning\\Semester7\\PRN221\\Spring2024\\project\\PRN221\\SimpleChatWithSignalR\\SimpleChatWithSignalR.csproj",
+  "projectFilePath": "H:\\PRN221\\Project\\PRN221\\SimpleChatWithSignalR\\SimpleChatWithSignalR.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

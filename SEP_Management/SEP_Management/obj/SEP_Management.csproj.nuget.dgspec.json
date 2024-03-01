@@ -1,0 +1,149 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\PRN221\\Project\\SEP_Management\\SEP_Management\\SEP_Management.csproj": {}
+  },
+  "projects": {
+    "H:\\PRN221\\Project\\SEP_Management\\SEP_Management\\SEP_Management.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\PRN221\\Project\\SEP_Management\\SEP_Management\\SEP_Management.csproj",
+        "projectName": "SEP_Management",
+        "projectPath": "H:\\PRN221\\Project\\SEP_Management\\SEP_Management\\SEP_Management.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "H:\\PRN221\\Project\\SEP_Management\\SEP_Management\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "H:\\Data\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.1.34, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.AspNetCore.Authentication.oAuth": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.1.39, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
