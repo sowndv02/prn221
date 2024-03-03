@@ -9,6 +9,8 @@ namespace RazorPagesLab
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var host = CreateHostBuilder(args).Build();
+            CreateDbIfNotExists(host);
 
             // Add services to the container.
             builder.Services.AddRazorPages();
@@ -39,5 +41,32 @@ namespace RazorPagesLab
 
             app.Run();
         }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<StartupBase>();
+            });
+
+        private static void CreateDbIfNotExists(IHost host)
+        {
+            using(var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<SchoolContext>();
+                    context.Database.EnsureCreated();
+                    // DbInitializer.Initialize(context);  
+
+                }catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger>();
+                    logger.LogError(ex, "An error occurred creating the DB.");
+                }
+            }
+        }
+
     }
 }
