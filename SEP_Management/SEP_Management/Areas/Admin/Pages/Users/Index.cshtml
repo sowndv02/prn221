@@ -1,13 +1,28 @@
 ﻿@page
+@using Microsoft.AspNetCore.Authorization;
 @model SEP_Management.Areas.Admin.Pages.Users.IndexModel
+@inject Microsoft.AspNetCore.Authorization.IAuthorizationService authorizationService
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var prevDisabled = !Model.User.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.User.HasNextPage ? "disabled" : "";
 }
 
-<h1>Index</h1>
 
+
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+<!-- Loader -->
+@* 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -15,67 +30,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].AvatarUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].Note)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].UpdatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].IsActive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].AccessToken)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.User[0].UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].NormalizedUserName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.User[0].Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].NormalizedEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].EmailConfirmed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].PasswordHash)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].SecurityStamp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].ConcurrencyStamp)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.User[0].PhoneNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].PhoneNumberConfirmed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].TwoFactorEnabled)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].LockoutEnd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].LockoutEnabled)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].AccessFailedCount)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.User[0].Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User[0].IsActive)
             </th>
             <th></th>
         </tr>
@@ -84,67 +51,19 @@
 @foreach (var item in Model.User) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AvatarUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdatedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccessToken)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NormalizedUserName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NormalizedEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailConfirmed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PasswordHash)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecurityStamp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConcurrencyStamp)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LockoutEnd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LockoutEnabled)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccessFailedCount)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Role.SettingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
@@ -155,3 +74,198 @@
 }
     </tbody>
 </table>
+ *@
+
+
+        <div class="container-fluid">
+            <div class="layout-specing">
+                <div class="row">
+                    <div class="col-xl-9 col-md-6">
+                        <h5 class="mb-0">User Management</h5>
+
+                        <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+                            <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                                <li class="breadcrumb-item"><a asp-page="./Index">User Management</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">User list</li>
+                            </ul>
+                        </nav>
+                    </div><!--end col-->
+
+                </div><!--end row-->
+
+        <div class="d-flex align-items-center row">
+            <form asp-page="./Index" method="get" class="d-flex align-items-center row">
+
+                <div class="col-md-2 mt-4" style="float:right">
+                    <div class="row">
+                        <div>
+                            <select asp-for="StatusFilter" asp-items="Model.ActiveList" class="form-select" onchange="this.form.submit()">
+                                <option value="" hidden="">Status Filter:</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mt-4" style="float:right">
+                    <div class="row">
+                        <div>
+                            <select asp-for="RoleFilter" asp-items="Model.RoleList" class="form-select" id="checkRole" onchange="this.form.submit()">
+                                <option value="" hidden="">Role Filter:</option>
+                                <option value="All">All</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mt-4 search-bar p-0 d-none d-lg-block" style="float:left">
+                    <div id="search" class="menu-search mb-0">
+                        <div>
+                            <input value="@Model.CurrentFilter" type="text" class="form-control border rounded-pill" name="SearchString" id="name" placeholder="Search Keywords...">
+                            <input type="submit" id="searchsubmit" value="Search">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-md-end col-md-6 mt-4">
+                    <a asp-page="./Create" class="btn btn-primary">Add New User</a>
+                </div><!--end col-->
+
+            </form>
+        </div>
+
+                <div class="table-responsive bg-white shadow rounded">
+
+                    <table id="myTable" class="table mb-0 table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th  class="border-bottom p-3" style="min-width: 180px; cursor: pointer">
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort" asp-route-currentFilter ="@Model.CurrentFilter">@Html.DisplayNameFor(model => model.User[0].FullName)<i class="uil uil-sort"></i></a>
+                                </th>
+                                <th  class="border-bottom p-3" style="min-width: 150px; cursor: pointer">
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.EmailSort" asp-route-currentFilter="@Model.CurrentFilter">@Html.DisplayNameFor(model => model.User[0].Email)<i class="uil uil-sort"></i></a>
+                                </th>
+                                <th class="border-bottom p-3" style="min-width: 150px; cursor: pointer">
+                            @Html.DisplayNameFor(model => model.User[0].Role.Name)
+                                </th>
+
+                                <th  class="border-bottom p-3" style="min-width: 150px; cursor: pointer">
+                            @Html.DisplayNameFor(model => model.User[0].IsActive)
+                                </th>
+                                <th class="border-bottom p-3" style="min-width: 100px;">Actions</th>
+
+                            </tr>
+                        </thead>
+                <tbody>
+
+                @foreach(var u in Model.User)
+                {
+                     <tr>
+                        <td class="p-3">
+                            <a href="#" class="text-dark">
+                                <div class="d-flex align-items-center">
+                                    <span class="ms-2">
+                                        @u.FullName
+                                    </span>
+                                </div>
+                            </a>
+                        </td>
+                        <td class="p-3">@u.Email</td>
+                        <td class="p-3">
+                             @(u.Role?.Name != null ? u.Role?.Name : "")
+                        </td>
+
+                            <td>@if (u.IsActive == 1)
+                                {
+                                    <span class="badge bg-soft-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-soft-danger">InActive</span>
+                                } 
+                            </td>
+                            
+                        <td class="p-3">
+                                    <a asp-page="./Edit" asp-route-id="@u.Id" class="btn btn-icon btn-pills btn-soft-primary"><i class="uil uil-pen"></i></a>
+                                    @if(u.IsActive == 1)
+                                    {
+                                        <a data-bs-toggle="modal" data-bs-target="#stop-@u.Id"
+                                           class="btn btn-icon btn-pills btn-soft-danger"
+                                           title="Inactive "><i class="uil uil-times icons"></i></a>
+                                        <div class="modal" id="stop-@u.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg w modal-dialog-centered " style="width:400px;">
+                                                <div class="modal-content p-3">
+
+                                                    <div class="modal-body border-0 text-center p-2">
+                                                        <h1 class="text-danger display-1"><i class="uil uil-times-circle"></i></h1>
+                                                        <h4 class="modal-title" id="exampleModalLabel">Are you sure</h4>
+                                                        <p>Do you really want to Deactivate this user? This process cannot be undone.</p>
+                                                    </div>
+                                                    <div class="modal-footer border-0 align-items-center justify-content-center">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                        <a asp-page="./Edit" asp-page-handler="ChangeStatus" asp-route-id="@u.Id" asp-route-status="Active" type="button" class="btn btn-danger">Deactivate</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }else{
+                                        <a data-bs-toggle="modal" data-bs-target="#start-@u.Id"
+                                           class="btn btn-icon btn-pills btn-soft-success"
+                                           title="Active ">
+                                            <i class="uil uil-check icons"></i>
+                                        </a>
+                                        <div class="modal" id="start-@u.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg w modal-dialog-centered " style="width:400px;">
+                                                <div class="modal-content p-3">
+
+                                                    <div class="modal-body border-0 text-center p-2">
+                                                        <h1 class="text-success display-1"><i class="uil uil-check-circle"></i></h1>
+                                                        <h4 class="modal-title" id="exampleModalLabel">Are you sure</h4>
+                                                        <p>Do you really want to Activate this user? This process cannot be undone.</p>
+                                                    </div>
+                                                    <div class="modal-footer border-0 align-items-center justify-content-center">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                        <a asp-page="./Edit" asp-page-handler="ChangeStatus" asp-route-id="@u.Id" asp-route-status="InActive" class="btn btn-success">Activate</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                        </td>
+                    </tr>
+                }
+
+                        </tbody>
+                    </table>
+                </div>
+        <div class="row text-center">
+            <div class="col-12 mt-4">
+                <div class="d-md-flex align-items-center text-center justify-content-between">
+                    <span class="text-muted me-3"></span>
+                    <ul class="pagination justify-content-center mb-0 mt-3 mt-sm-0">
+                        <li class="page-item">
+                            <a asp-page="./Index"
+                               asp-route-sortOrder="@Model.CurrentSort"
+                               asp-route-pageIndex="@(Model.User.PageIndex - 1)"
+                               asp-route-currentFilter="@Model.CurrentFilter"
+                               asp-route-statusFilter="@Model.StatusFilter"
+                               asp-route-roleFilter="@Model.RoleFilter"
+                               class="btn btn-primary page-link @prevDisabled">Previous</a>
+                            
+                        </li>
+                        <li class="page-item">
+                            <a asp-page="./Index"
+                               asp-route-sortOrder="@Model.CurrentSort"
+                               asp-route-pageIndex="@(Model.User.PageIndex + 1)"
+                               asp-route-currentFilter="@Model.CurrentFilter"
+                               asp-route-statusFilter="@Model.StatusFilter"
+                               asp-route-roleFilter="@Model.RoleFilter"
+                               class="btn  btn-primary page-link  @nextDisabled">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--end col-->
+        </div>
+            </div>
+        </div><!--end container-->
+
+

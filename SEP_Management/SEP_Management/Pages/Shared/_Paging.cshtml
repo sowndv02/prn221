@@ -26,15 +26,13 @@
     if (currentPage < countPages)
         next = currentPage + 1;
 
-    // Các trang hiện thị trong điều hướng
     List<int> pagesRanges = new List<int>();
 
 
-    int delta = 5;             // Số trang mở rộng về mỗi bên trang hiện tại
-    int remain = delta * 2;     // Số trang hai bên trang hiện tại
+    int delta = 5;            
+    int remain = delta * 2; 
 
     pagesRanges.Add(currentPage);
-    // Các trang phát triển về hai bên trang hiện tại
     for (int i = 1; i <= delta; i++)
     {
         if (currentPage + i <= countPages)
@@ -50,8 +48,6 @@
         }
 
     }
-    // Xử lý thêm vào các trang cho đủ remain
-    //(xảy ra ở đầu mút của khoảng trang không đủ trang chèn  vào)
     if (remain > 0)
     {
         if (pagesRanges[0] == 1)
@@ -78,7 +74,6 @@
 
 }
 
-@* PHÁT SINH HTML*@
 
 <ul class="pagination">
     <!-- Previous page link -->
@@ -109,7 +104,7 @@
         else
         {
             <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">@pageitem <span class="sr-only">(current)</span></a>
+                <a class="page-link" href="#">@pageitem <span class="sr-only"></span></a>
             </li>
         }
     }

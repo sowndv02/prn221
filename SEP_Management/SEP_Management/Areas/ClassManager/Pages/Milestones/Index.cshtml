@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
+@* 
 <h1>Index</h1>
 
 <p>
@@ -15,7 +15,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Milestone[0].MinestoneName)
+                @Html.DisplayNameFor(model => model.Milestone[0].MilestoneName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Milestone[0].Description)
@@ -57,7 +57,7 @@
 @foreach (var item in Model.Milestone) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MinestoneName)
+                @Html.DisplayFor(modelItem => item.MilestoneName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
@@ -101,3 +101,166 @@
 }
     </tbody>
 </table>
+ *@
+
+
+<style>
+    .card {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+</style>
+
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+<!-- Loader -->
+
+<div class="container-fluid">
+    <div class="layout-specing">
+        <div class="row mb-3">
+            <div class="col-xl-9 col-md-6">
+                <h5 class="mb-0">Project Management</h5>
+
+                <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+                    <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                        <li class="breadcrumb-item"><a asp-page="./Index">Project Management</a></li>
+                        <li class="breadcrumb-item"><a href="ManageProjectController">Select Class</a></li>
+                        <li class="breadcrumb-item "><a href="ManageProjectController?service=ProjectList&class_id=${class_id}">Project List</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Project Details</li>
+                    </ul>
+                </nav>
+            </div><!--end col-->
+        </div>
+
+
+        <div class="bg-white component-wrapper border-0 rounded shadow">
+            <div class="p-4 border-bottom">
+                <h5 class="mb-0"> Project details </h5>
+            </div>
+            <div class="p-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-pills nav-justified flex-column flex-sm-row rounded" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link rounded" href="ManageProjectController?service=updateProject&project_id=<%=projectID%>&class_id=<%=classID%>" role="tab" aria-controls="pills-smart" aria-selected="false">
+                                    <div class="text-center pt-1 pb-1">
+                                        <h4 class="title font-weight-normal mb-0">General</h4>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+
+                            <li class="nav-item">
+                                <a class="nav-link rounded active" id="pills-cloud-tab" data-bs-toggle="pill" href="#pills-cloud" role="tab" aria-controls="pills-cloud" aria-selected="true">
+                                    <div class="text-center pt-1 pb-1">
+                                        <h4 class="title font-weight-normal mb-0">Milestone</h4>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+
+                            <li class="nav-item">
+                                <a class="nav-link rounded" href="IssueSettingController?service=displayProjectSetting&projectID=<%=projectID%>&mode=project" role="tab" aria-controls="pills-apps" aria-selected="false">
+                                    <div class="text-center pt-1 pb-1">
+                                        <h4 class="title font-weight-normal mb-0">Settings</h4>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+
+                            <li class="nav-item">
+                                <a class="nav-link rounded" href="IssueSettingController?service=ListProjectIssue&projectID=" role="tab" aria-controls="pills-apps" aria-selected="false">
+                                    <div class="text-center pt-1 pb-1">
+                                        <h4 class="title font-weight-normal mb-0">Issue</h4>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                        </ul><!--end nav pills-->
+                        <button class="btn btn-success mb-3" title="Sync" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+                            <i class="uil uil-sync icons"></i> Sync with GitLab
+                        </button>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="table-responsive m-0">
+                                <table class="  table  bg-white mb-0 table-hover table-bordered" id="myTable">
+                                    <thead class="">
+                                        <tr>
+                                            <th class="border-bottom p-3 " style="min-width: 50px;">Milestone ID</th>
+                                            <th class="border-bottom p-3" style="min-width: 180px;">Milestone Name</th>
+                                            <th class="border-bottom p-3">Start date</th>
+                                            <th class="border-bottom p-3">Due date</th>
+                                            <th class="border-bottom p-3">Description</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody class="">
+                                        @foreach(var item in Model.Milestone)
+                                        {
+                                            <tr>
+                                                <td class="p-3">@item.MilestoneId</td>
+                                                <td class="p-3">@item.MilestoneName</td>
+                                                <td class="p-3">@item.StartDate</td>
+                                                <td class="p-3">@item.DueDate</td>
+                                                <td class="p-3">@item.Description</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!--end tab content-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="p-2">
+                            <form id="syncForm" asp-page="Edit" asp-page-handler="SyncGitLab" method="post">
+                                <label class="form-label">Gitlab URL:</label>
+                                <input asp-for="Project.Url" id="gitUrl" type="text"
+                                       class="form-control" placeholder="Enter your Gitlab URL here..."
+                                       value="@Model.Project.Url"
+                                       required>
+                                <label readonly="" class="form-label">Access Token:</label>
+                                <input asp-for="Project.AccessToken" id="accessToken" type="text"
+                                       class="form-control" placeholder="Enter your Access Token here..."
+                                       value="@Model.Project.AccessToken"
+                                       required>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" id="SyncAction">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END OF BODY -->
+    <!-- Footer Start -->
+    <!--end footer-->
+</div>

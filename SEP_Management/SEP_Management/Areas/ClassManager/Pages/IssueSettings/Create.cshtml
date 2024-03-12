@@ -1,0 +1,82 @@
+﻿@page
+@model SEP_Management.Areas.ClassManager.Pages.IssueSettings.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>IssueSetting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.SubjectId" class="control-label"></label>
+                <select asp-for="IssueSetting.SubjectId" class ="form-control" asp-items="ViewBag.SubjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.ClassId" class="control-label"></label>
+                <select asp-for="IssueSetting.ClassId" class ="form-control" asp-items="ViewBag.ClassId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.ProjectId" class="control-label"></label>
+                <select asp-for="IssueSetting.ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.Title" class="control-label"></label>
+                <input asp-for="IssueSetting.Title" class="form-control" />
+                <span asp-validation-for="IssueSetting.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.Status" class="control-label"></label>
+                <input asp-for="IssueSetting.Status" class="form-control" />
+                <span asp-validation-for="IssueSetting.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.Description" class="control-label"></label>
+                <input asp-for="IssueSetting.Description" class="form-control" />
+                <span asp-validation-for="IssueSetting.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.CreatedBy" class="control-label"></label>
+                <input asp-for="IssueSetting.CreatedBy" class="form-control" />
+                <span asp-validation-for="IssueSetting.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.IsActive" class="control-label"></label>
+                <input asp-for="IssueSetting.IsActive" class="form-control" />
+                <span asp-validation-for="IssueSetting.IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.UpdatedBy" class="control-label"></label>
+                <input asp-for="IssueSetting.UpdatedBy" class="form-control" />
+                <span asp-validation-for="IssueSetting.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.CreatedAt" class="control-label"></label>
+                <input asp-for="IssueSetting.CreatedAt" class="form-control" />
+                <span asp-validation-for="IssueSetting.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueSetting.UpdatedAt" class="control-label"></label>
+                <input asp-for="IssueSetting.UpdatedAt" class="form-control" />
+                <span asp-validation-for="IssueSetting.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

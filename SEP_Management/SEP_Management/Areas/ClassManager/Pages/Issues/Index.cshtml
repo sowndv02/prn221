@@ -1,0 +1,86 @@
+﻿@page
+@model SEP_Management.Areas.ClassManager.Pages.Issues.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@* 
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].StatusId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].ProcessId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].UpdatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].Milestone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].Project)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Issue[0].Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Issue) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Milestone.MilestoneId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type.SettingId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IssueId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IssueId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IssueId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

@@ -4,8 +4,10 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+    var prevDisabled = !Model.Subject.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Subject.HasNextPage ? "disabled" : "";
 }
-
+@* 
 <h1>Index</h1>
 
 <p>
@@ -95,3 +97,246 @@
 }
     </tbody>
 </table>
+ *@
+
+
+<style>
+    #toast {
+        display: none;
+        position: fixed;
+        top: 80px;
+        right: 25px;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+    }
+</style>
+
+
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+<!-- Loader -->
+
+
+<div class="container-fluid">
+    <div class="layout-specing">
+        <div class="row">
+            <div class="col-xl-9 col-md-2">
+                <h5 class="mb-0">Subject Management</h5>
+
+                <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+                    <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                        <li class="breadcrumb-item"><a asp-page="Index">Subject Management</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Subject list</li>
+                    </ul>
+                </nav>
+            </div><!--end col-->
+
+        </div><!--end row-->
+        <div class="row" style="display: flex;">
+            <form class="row col-md-10" method="get">
+                <div class="col-md-3 mt-5" style="float:right">
+                    <div class="row ">
+                        <div class="">
+                            <select asp-for="StatusFilter" asp-items="Model.ActiveList" class="form-select" id="checkActive" onchange="this.form.submit()">
+                                <option value="" hidden="">Status Filter:</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-5" style="float:right">
+                    <div class="row ">
+                        <div class="">
+                        <select asp-for="ManagerFilter" asp-items="Model.ManagerList" class="form-select" id="checkRole" onchange="this.form.submit()">
+                            <option value="" hidden="">Manager Filter:</option>
+                            <option value="All">All</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+                <div class="search-bar p-0 d-none d-lg-block col-md-3 mt-5 ml-auto">
+                    <div id="search" class="menu-search mb-0">
+                        <div>
+                            <input type="text" class="form-control border rounded-pill" name="searchString" value="@Model.CurrentFilter" id="name" placeholder="Search Keywords...">
+                            <input type="submit" id="searchsubmit" value="Search">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="text-md-end col-md-2 mt-5">
+                <a asp-page="Create" class="btn btn-primary">Add Subject</a>
+            </div><!--end col-->
+        </div>
+        <div class="table-responsive bg-white shadow rounded">
+            <script type="text/javascript">
+                function displayToast(message, isSuccess) {
+                    var toast = document.getElementById("toast");
+                    toast.innerHTML = message;
+                    if (isSuccess) {
+                        toast.style.backgroundColor = "#4CAF50";  // Green color for success
+                    } else {
+                        toast.style.backgroundColor = "#F44336";  // Red color for failure
+                    }
+                    toast.style.display = "block";
+                    setTimeout(function () {
+                        toast.style.display = "none";
+                    }, 3000);  // Display the toast for 3 seconds
+                }
+            </script>
+
+            <div id="toast"></div>
+
+            <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var isSuccess = urlParams.get("success");
+                    if (isSuccess === "true") {
+                        displayToast("Updated subject successfully!", true);
+                    } else if (isSuccess === "false") {
+                        displayToast("Failed to update subject!", false);
+                    } else if (isSuccess === "true1") {
+                        displayToast("Add subject successfully!", true);
+                    } else if (isSuccess === "false1") {
+                        displayToast("Failed to add subject!", false);
+                    }
+                });
+            </script>
+            <table id="myTable" class="table mb-0 table-center table-bordered">
+                <thead>
+                    <tr>
+                        <th class="border-bottom p-3" style="min-width: 50px;">
+                            ID
+                        </th>
+                        <th onclick="sortTable(1)" class="border-bottom p-3" style="min-width: 180px; cursor: pointer">
+                            Subject Code<i class="uil uil-sort"></i>
+                        </th>
+                        <th  class="border-bottom p-3" style="min-width: 150px;">
+                            Subject Name
+                        </th>
+                        <th class="border-bottom p-3" style="min-width: 150px;">
+                            Manager
+                        </th>
+                        <th class="border-bottom p-3" style="min-width: 150px;">
+                            Status
+                        </th>
+                        <th class="border-bottom p-3"
+                            style="min-width: 200px; text-align: center;">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                
+                    <tbody>
+                    @foreach (var item in Model.Subject){
+                        <tr>
+                            <td class="p-3">@item.SubjectId</td>
+                            <td class="p-3">@item.SubjectCode</td>
+                            <td class="p-3">@item.SubjectName</td>
+                            <td class="p-3">@item.Manager.FullName</td>
+                            @if(item.IsActive == 1)
+                            {
+                                <td><span class="badge bg-soft-success">Active</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="badge bg-soft-danger">InActive</span></td>
+                            }
+                            <td class="text-center p-3">
+                                <a asp-page="Edit" asp-route-id="@item.SubjectId" class="btn btn-icon btn-pills btn-soft-primary"><i class="uil uil-pen"></i></a>
+                                <a asp-page="Detail" asp-route-id="@item.SubjectId" class="btn btn-icon btn-pills btn-soft-primary"><i class="uil uil-eye"></i></a>
+                                @if(item.IsActive == 1)
+                                {
+                                    <a asp-page="Edit" asp-page-handler="ChangeStatus" asp-route-id="@item.SubjectId" asp-route-status="Active" class="btn btn-icon btn-pills btn-soft-danger" title="Inactivate the subject">
+                                        <i class="uil uil-times icons"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-page="Edit" asp-page-handler="ChangeStatus" asp-route-id="@item.SubjectId" asp-route-status="InActive" class="btn btn-icon btn-pills btn-soft-success" title="Activate the subject">
+                                        <i class="uil uil-check icons"></i>
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 mt-4">
+                <div class="d-md-flex align-items-center text-center justify-content-between">
+                    <span class="text-muted me-3"></span>
+                    <ul class="pagination justify-content-center mb-0 mt-3 mt-sm-0">
+                        <li class="page-item">
+                            <a asp-page="./Index"
+                            asp-route-pageIndex="@(Model.Subject.PageIndex - 1)"
+                            asp-route-currentFilter="@Model.CurrentFilter"
+                            asp-route-statusFilter="@Model.StatusFilter"
+                            class="btn btn-primary page-link @prevDisabled">Previous</a>
+
+                        </li>
+                        <li class="page-item">
+                            <a asp-page="./Index"
+                            asp-route-pageIndex="@(Model.Subject.PageIndex + 1)"
+                            asp-route-currentFilter="@Model.CurrentFilter"
+                            asp-route-statusFilter="@Model.StatusFilter"
+                            class="btn  btn-primary page-link  @nextDisabled">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--end col-->
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>

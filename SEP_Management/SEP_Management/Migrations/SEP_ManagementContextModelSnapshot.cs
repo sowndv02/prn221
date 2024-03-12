@@ -17,37 +17,10 @@ namespace SEP_Management.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.26")
+                .HasAnnotation("ProductVersion", "6.0.27")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("Roles", (string)null);
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
@@ -102,12 +75,10 @@ namespace SEP_Management.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -144,12 +115,10 @@ namespace SEP_Management.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -180,11 +149,11 @@ namespace SEP_Management.Migrations
                         .HasColumnType("varchar(100)")
                         .HasColumnName("assign_name");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime")
                         .HasColumnName("created_at");
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int?>("CreatedBy")
                         .HasColumnType("int")
                         .HasColumnName("created_by");
 
@@ -195,7 +164,7 @@ namespace SEP_Management.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("due_date");
 
-                    b.Property<byte>("IsActive")
+                    b.Property<byte?>("IsActive")
                         .HasColumnType("tinyint")
                         .HasColumnName("is_active");
 
@@ -210,11 +179,11 @@ namespace SEP_Management.Migrations
                         .HasColumnType("int")
                         .HasColumnName("subject_id");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime")
                         .HasColumnName("updated_at");
 
-                    b.Property<short>("UpdatedBy")
+                    b.Property<short?>("UpdatedBy")
                         .HasColumnType("smallint")
                         .HasColumnName("updated_by");
 
@@ -363,11 +332,11 @@ namespace SEP_Management.Migrations
                         .HasColumnType("int")
                         .HasColumnName("class_id");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime")
                         .HasColumnName("created_at");
 
-                    b.Property<short>("CreatedBy")
+                    b.Property<short?>("CreatedBy")
                         .HasColumnType("smallint")
                         .HasColumnName("created_by");
 
@@ -380,7 +349,6 @@ namespace SEP_Management.Migrations
                         .HasColumnName("is_leader");
 
                     b.Property<string>("Note")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("note");
 
@@ -393,11 +361,11 @@ namespace SEP_Management.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("student_id");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime")
                         .HasColumnName("updated_at");
 
-                    b.Property<short>("UpdatedBy")
+                    b.Property<short?>("UpdatedBy")
                         .HasColumnType("smallint")
                         .HasColumnName("updated_by");
 
@@ -617,11 +585,11 @@ namespace SEP_Management.Migrations
                         .HasColumnType("tinyint")
                         .HasColumnName("is_active");
 
-                    b.Property<string>("MinestoneName")
+                    b.Property<string>("MilestoneName")
                         .HasMaxLength(100)
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)")
-                        .HasColumnName("minestone_name");
+                        .HasColumnName("milestone_name");
 
                     b.Property<int?>("ProjectId")
                         .HasColumnType("int")
@@ -736,6 +704,58 @@ namespace SEP_Management.Migrations
                     b.ToTable("project", (string)null);
                 });
 
+            modelBuilder.Entity("SEP_Management.Models.Role", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Group")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsActive")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdatedBy")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("Roles", (string)null);
+                });
+
             modelBuilder.Entity("SEP_Management.Models.Subject", b =>
                 {
                     b.Property<int>("SubjectId")
@@ -745,11 +765,11 @@ namespace SEP_Management.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubjectId"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime")
                         .HasColumnName("created_at");
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<int?>("CreatedBy")
                         .HasColumnType("int")
                         .HasColumnName("created_by");
 
@@ -758,7 +778,7 @@ namespace SEP_Management.Migrations
                         .HasColumnType("text")
                         .HasColumnName("description");
 
-                    b.Property<byte>("IsActive")
+                    b.Property<byte?>("IsActive")
                         .HasColumnType("tinyint")
                         .HasColumnName("is_active");
 
@@ -792,11 +812,11 @@ namespace SEP_Management.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("time_allocation");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime")
                         .HasColumnName("updated_at");
 
-                    b.Property<int>("UpdatedBy")
+                    b.Property<int?>("UpdatedBy")
                         .HasColumnType("int")
                         .HasColumnName("updated_by");
 
@@ -857,60 +877,6 @@ namespace SEP_Management.Migrations
                     b.ToTable("subject_setting", (string)null);
                 });
 
-            modelBuilder.Entity("SEP_Management.Models.SystemSetting", b =>
-                {
-                    b.Property<int>("SettingId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("setting_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SettingId"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime")
-                        .HasColumnName("created_at");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int")
-                        .HasColumnName("created_by");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("int")
-                        .HasColumnName("display_order");
-
-                    b.Property<byte>("IsActive")
-                        .HasColumnType("tinyint")
-                        .HasColumnName("is_active");
-
-                    b.Property<int>("SettingGroup")
-                        .HasColumnType("int")
-                        .HasColumnName("setting_group");
-
-                    b.Property<string>("SettingName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("setting_name");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime")
-                        .HasColumnName("updated_at");
-
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("int")
-                        .HasColumnName("updated_by");
-
-                    b.HasKey("SettingId");
-
-                    b.ToTable("system_setting", (string)null);
-                });
-
             modelBuilder.Entity("SEP_Management.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -929,6 +895,9 @@ namespace SEP_Management.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
@@ -938,6 +907,10 @@ namespace SEP_Management.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte?>("IsActive")
                         .HasColumnType("tinyint");
@@ -968,14 +941,17 @@ namespace SEP_Management.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("UpdatedBy")
                         .HasColumnType("int");
@@ -1001,7 +977,7 @@ namespace SEP_Management.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("SEP_Management.Models.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1028,7 +1004,7 @@ namespace SEP_Management.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("SEP_Management.Models.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1199,7 +1175,7 @@ namespace SEP_Management.Migrations
 
             modelBuilder.Entity("SEP_Management.Models.User", b =>
                 {
-                    b.HasOne("SEP_Management.Models.SystemSetting", "Role")
+                    b.HasOne("SEP_Management.Models.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId");
 
@@ -1246,6 +1222,11 @@ namespace SEP_Management.Migrations
                     b.Navigation("Milestones");
                 });
 
+            modelBuilder.Entity("SEP_Management.Models.Role", b =>
+                {
+                    b.Navigation("Users");
+                });
+
             modelBuilder.Entity("SEP_Management.Models.Subject", b =>
                 {
                     b.Navigation("Assignments");
@@ -1253,11 +1234,6 @@ namespace SEP_Management.Migrations
                     b.Navigation("IssueSettings");
 
                     b.Navigation("SubjectSettings");
-                });
-
-            modelBuilder.Entity("SEP_Management.Models.SystemSetting", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("SEP_Management.Models.User", b =>

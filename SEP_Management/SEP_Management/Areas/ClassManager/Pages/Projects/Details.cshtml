@@ -5,7 +5,7 @@
     ViewData["Title"] = "Details";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
+@* 
 <h1>Details</h1>
 
 <div>
@@ -107,4 +107,165 @@
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Project?.ProjectId">Edit</a> |
     <a asp-page="./Index">Back to List</a>
+</div> *@
+
+
+<style>
+    .card {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+</style>
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
 </div>
+
+<div class="container-fluid">
+                    <div class="layout-specing">
+                        <div class="row mb-3">
+                            <div class="col-xl-9 col-md-6">
+                                <h5 class="mb-0">Project Management</h5>
+
+                                <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+                                    <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                                        <li class="breadcrumb-item"><a href="">Project Management</a></li>
+                                        <li class="breadcrumb-item"><a href="ManageProjectController">Select Class</a></li>
+                                        <li class="breadcrumb-item " ><a href="ManageProjectController?service=ProjectList&class_id=${class_id}">Project List</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Project Details</li>
+                                    </ul>
+                                </nav>
+                            </div><!--end col-->
+                        </div> 
+
+
+                        <div class="row">
+                            <div class="bg-white component-wrapper border-0 rounded shadow" >
+                                <div class="p-4 border-bottom">
+                                    <h5 class="mb-0"> Project details </h5>
+                                </div>
+
+                                <div class="p-4">
+                                    <div class="row pt-2">
+                                        <div class="col-12">
+                                            <div class="tab-content" id="pills-tabContent">
+
+                                                <div class="mt-2" id="updateForm">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Class Code:</label>
+                                                                <select asp-items="@ViewBag.Classes" class="form-select" id="classSelect">
+                                                                </select>
+                                                            </div>
+                                                        </div><!--end col-->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Status:</label>
+                                                                <input asp-for="Project.Status" readonly="" type="hidden" class="form-control" value="@Model.Project.Status">
+                                                                    @if (Model.Project.Status == 1)
+                                                                    {
+                                                                        <input  readonly="" type="text" class="form-control" value="Active">
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <input  readonly="" type="text" class="form-control" value="Inactive">
+                                                                    }
+                                                            </div>
+                                                        </div><!--end col-->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Group Name:</label>
+                                                                <input readonly="" type="text" title="Between 1 to 20 characters" class="form-control" value="@Model.Project.GroupName">
+                                                            </div> 
+                                                        </div><!--end col-->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Project Code:</label>
+                                                                <input readonly="" title="Between 3 to 10 characters" type="text" class="form-control" value="@Model.Project.ProjectCode">
+                                                            </div>                                                                               
+                                                        </div><!--end col-->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">English Name:</label>
+                                                                <input readonly="" title="Between 5 to 30 characters" type="text" class="form-control" value="@Model.Project.ProjectEnName">
+                                                            </div> 
+                                                        </div><!--end col-->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Vietnamese Name:</label>
+                                                                <input  readonly="" name="Project.ProjectVieName" title="Between 5 to 30 characters" type="text" class="form-control" value="@Model.Project.ProjectVieName">
+                                                            </div>                                                                               
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Mentor:</label>
+                                                                <select asp-items="ViewBag.Mentors" class="form-select" id="mentorSelect">
+                                                                </select>
+                                                            </div> 
+                                                        </div><!--end col-->
+
+                                                        <div class="col-md-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Co-mentor:</label>
+                                                                <select asp-items="ViewBag.Mentors" class="form-select" id="coMentorSelect">
+                                                                </select>
+                                                            </div>                                                                               
+                                                        </div>
+
+                                                        <div class="col-md-6">
+
+                                                        </div>
+
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Description: </label>
+                                                                <textarea id="comments" rows="4" class="form-control" readonly >@Model.Project.ProjectDescription</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div><!--end row-->
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <Button type="submit" name="submit" value="" class="btn btn-primary"><a asp-page="Index" asp-route-classId="@Model.Project.ClassId" style="color: #fff; text-decoration: none;">Back</a></button>
+                                                        </div><!--end col-->
+                                                    </div><!--end row-->
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <a class="btn btn-danger" asp-page="Edit" asp-route-projectId="@Model.Project.ProjectId" asp-route-classId="@Model.Project.ClassId" style="color: #fff; text-decoration: none;">Edit</a>
+                                                        </div><!--end col-->
+                                                    </div><!--end row-->
+                                                </div><!--end form-->
+                                            </div><!--end tab content-->
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('classSelect').disabled = true;
+        document.getElementById('mentorSelect').disabled = true;
+        document.getElementById('coMentorSelect').disabled = true;
+    });
+</script>
+
+

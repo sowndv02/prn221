@@ -15,9 +15,9 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Milestone.MinestoneName" class="control-label"></label>
-                <input asp-for="Milestone.MinestoneName" class="form-control" />
-                <span asp-validation-for="Milestone.MinestoneName" class="text-danger"></span>
+                <label asp-for="Milestone.MilestoneName" class="control-label"></label>
+                <input asp-for="Milestone.MilestoneName" class="form-control" />
+                <span asp-validation-for="Milestone.MilestoneName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Milestone.Description" class="control-label"></label>
@@ -35,20 +35,6 @@
                 <span asp-validation-for="Milestone.IsActive" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Milestone.ClassId" class="control-label"></label>
-                <select asp-for="Milestone.ClassId" class ="form-control" asp-items="ViewBag.ClassId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Milestone.CreatedBy" class="control-label"></label>
-                <input asp-for="Milestone.CreatedBy" class="form-control" />
-                <span asp-validation-for="Milestone.CreatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Milestone.UpdatedBy" class="control-label"></label>
-                <input asp-for="Milestone.UpdatedBy" class="form-control" />
-                <span asp-validation-for="Milestone.UpdatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Milestone.ProjectId" class="control-label"></label>
                 <select asp-for="Milestone.ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
             </div>
@@ -61,16 +47,6 @@
                 <label asp-for="Milestone.GitlabId" class="control-label"></label>
                 <input asp-for="Milestone.GitlabId" class="form-control" />
                 <span asp-validation-for="Milestone.GitlabId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Milestone.CreatedAt" class="control-label"></label>
-                <input asp-for="Milestone.CreatedAt" class="form-control" />
-                <span asp-validation-for="Milestone.CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Milestone.UpdatedAt" class="control-label"></label>
-                <input asp-for="Milestone.UpdatedAt" class="form-control" />
-                <span asp-validation-for="Milestone.UpdatedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

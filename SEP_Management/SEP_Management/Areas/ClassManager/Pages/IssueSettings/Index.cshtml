@@ -1,0 +1,339 @@
+﻿@page
+@model SEP_Management.Areas.ClassManager.Pages.IssueSettings.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@* 
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].UpdatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].Project)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueSetting[0].Subject)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.IssueSetting) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.ClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.SubjectId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SettingId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SettingId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SettingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@
+
+<style>
+    #nav-class-setting {
+        background-color: #007bff; /* Change to your desired background color */
+        color: #fff !important; /* Change to your desired text color */
+        /* Add any other styles you want to apply to the active link */
+    }
+
+    #toast {
+        display: none;
+        position: fixed;
+        top: 100px;
+        right: 50px;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+    }
+</style>
+
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="layout-specing">
+        
+
+<div class="row mb-3">
+    <div class="col-xl-9 col-md-6">
+        <h5 class="mb-0">Project Management</h5>
+
+        <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+            <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                <li class="breadcrumb-item"><a href="">Project Management</a></li>
+                <li class="breadcrumb-item"><a href="ManageProjectController">Select Class</a></li>
+                <li class="breadcrumb-item "><a href="ManageProjectController?service=ProjectList&class_id=${class_id}">Project List</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Project Details</li>
+            </ul>
+        </nav>
+    </div><!--end col-->
+</div>
+<div class="bg-white component-wrapper border-0 rounded shadow">
+    <div class="p-4 border-bottom">
+        <h5 class="mb-0"> Project details </h5>
+    </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 rounded-0 p-4">
+                    <!--searchBar-->
+                    <div class="row ">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="nav nav-pills nav-justified flex-column flex-sm-row rounded" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link rounded" href="ManageProjectController?service=updateProject&project_id=<%=projectID%>&class_id=<%=classID%>" role="tab" aria-controls="pills-smart" aria-selected="false">
+                                                <div class="text-center pt-1 pb-1">
+                                                    <h4 class="title font-weight-normal mb-0">General</h4>
+                                                </div>
+                                            </a><!--end nav link-->
+                                        </li><!--end nav item-->
+                                        <li class="nav-item">
+                                            <a class="nav-link rounded" href="ManageProjectController?service=listMilestones&project_id=<%=rsProject.getString(1)%>" role="tab" aria-controls="pills-smart" aria-selected="false">
+                                                <div class="text-center pt-1 pb-1">
+                                                    <h4 class="title font-weight-normal mb-0">Milestone</h4>
+                                                </div>
+                                            </a><!--end nav link-->
+                                        </li><!--end nav item-->
+                                        <li class="nav-item">
+                                            <a class="nav-link rounded active" id="pills-cloud-tab" data-bs-toggle="pill" href="IssueSettingController?service=displayProjectSetting&projectID=<%=rsProject.getString(1)%>&mode=project" role="tab" aria-controls="pills-cloud" aria-selected="true">
+                                                <div class="text-center pt-1 pb-1">
+                                                    <h4 class="title font-weight-normal mb-0">Setting</h4>
+                                                </div>
+                                            </a><!--end nav link-->
+                                        </li><!--end nav item-->
+
+                                        <li class="nav-item">
+                                            <a class="nav-link rounded" href="IssueSettingController?service=ListProjectIssue&projectID=<%=rsProject.getString(1)%>" role="tab" aria-controls="pills-apps" aria-selected="false">
+                                                <div class="text-center pt-1 pb-1">
+                                                    <h4 class="title font-weight-normal mb-0">Issue</h4>
+                                                </div>
+                                            </a><!--end nav link-->
+                                        </li><!--end nav item-->
+                                    </ul><!--end nav pills-->
+                                </div><!--end col-->
+                            </div><!--end row-->
+
+                        <!-- Search -->
+
+                        <div class="search-bar p-4 d-none d-md-block ">
+                            <div id="search" class="menu-search mb-0">
+                                <form action="IssueSettingController" role="search" method="get" id="searchform" class="searchform">
+                                    <input type="hidden" name="service" value="searchProjectSetting">
+                                    <input type="hidden" name="projectID" value="<%=projectID%>">
+                                    <input type="hidden" name="mode" value="project">
+                                    <div>
+                                        <input type="text" class="form-control border rounded-pill" name="titleNstatus" id="name" placeholder="Search Keywords...">
+                                        <input type="submit" id="searchsubmit" value="Search">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End searchbar -->
+                        <!-- Filter -->
+                        
+                        <div class="col-md-2 mt-4">
+                            <form action="IssueSettingController">
+                                <c:forEach items="${listSubjectSetting}" var="sd">
+                                    <input type="hidden" name="service" value="filterIssueProject">
+                                    <input type="hidden" name="projectID" value="${sd.project_id}">
+                                    <input type="hidden" name="mode" value="project">
+                                </c:forEach>
+                                <select name="issueType" class="form-select" id="checkActive" onchange="this.form.submit()">
+                                    <option value="" hidden="">Issue Type:</option>
+                                    <option value="display">All</option>
+                                    <c:forEach items="${requestScope.listType}" var="v">
+                                        <option value="${v.title}">${v.title}</option>
+                                    </c:forEach>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-md-2 mt-4">
+                            <form action="IssueSettingController">
+                                <input type="hidden" name="service" value="filterIssueProject">
+                                <input type="hidden" name="projectID" value="<%=projectID%>">
+                                <input type="hidden" name="mode" value="project">
+
+                                <select name="issueStatus" class="form-select" id="checkActive" onchange="this.form.submit()">
+                                    <option value="" hidden="">Issue Status:</option>
+                                    <option value="display">All</option>
+                                    <c:forEach items="${requestScope.listStatus}" var="s">
+                                        <option value="">Active</option>
+                                        <option value="">InActive</option>
+                                    </c:forEach>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <div style="float: right; margin-bottom: 20px " class="d-grid">
+                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSetting">Add new issue</a>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!-- End filter -->
+                    <!--StartTable-->
+                    <script type="text/javascript">
+                        function displayToast(message, isSuccess) {
+                            var toast = document.getElementById("toast");
+                            toast.innerHTML = message;
+                            if (isSuccess) {
+                                toast.style.backgroundColor = "#4CAF50";  // Green color for success
+                            } else {
+                                toast.style.backgroundColor = "#F44336";  // Red color for failure
+                            }
+                            toast.style.display = "block";
+                            setTimeout(function () {
+                                toast.style.display = "none";
+                            }, 2000);  // Display the toast for 3 seconds
+                        }
+                    </script>
+                    <div id="toast"></div>
+                    <div class="table-responsive bg-white shadow rounded">
+                        <script type="text/javascript">
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var urlParams = new URLSearchParams(window.location.search);
+                                var success = urlParams.get("success");
+                                if (success === "true") {
+                                    displayToast("updated successfully!", true);
+                                } else if (success === "false") {
+                                    displayToast("Failed to update!", false);
+                                } else if (success === "true1") {
+                                    displayToast("Added successfully!", true);
+                                } else if (success === "false1") {
+                                    displayToast("Failed to add!", false);
+                                }
+                            });
+                        </script>
+                        <div class="tab-pane fade show active">
+                            <table class="table mb-0 table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="border-bottom p-3" style="display: none;" style="min-width: 50px;">Setting ID</th>
+                                        <th class="border-bottom p-3" style="min-width: 50px;">Project ID</th>
+                                        <th class="border-bottom p-3" style="min-width: 150px;">Issue Type</th>
+                                        <th class="border-bottom p-3" style="min-width: 150px;">Issue Status</th>
+                                        <th class="border-bottom p-3" style="min-width: 150px;">Created At</th>
+                                        <th class="border-bottom p-3" style="min-width: 150px;">Status</th>
+                                        <th class="border-bottom p-3" style="min-width: 200px; text-align: center;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        @foreach (var item in Model.IssueSetting)
+                                        {
+                                            <tr>
+                                                <td class="p-3" style="display: none;">@item.SettingId</td>
+                                                <td>@item.ProjectId</td>
+                                                <td class="p-3">@item.Title</td>
+                                                <td class="p-3">@item.Status</td>
+                                                <td class="p-3">@item.CreatedAt</td>
+                                                @if(item.Status == "todo1")
+                                                {
+                                                    <td><span style="font-size: 15px" class="badge bg-soft-success">Active</span></td>
+                                                }
+                                                else
+                                                {
+                                                        <td><span style="font-size: 14px" class="badge bg-soft-danger">InActive</span></td>
+                                                }
+                                                <td class="text-center p-3">
+                                                    <a href="IssueSettingController?service=projectSettingUpdate&setting_id=${ls.setting_id}&projectID=${ls.project_id}&mode=project" class="btn btn-icon btn-pills btn-soft-primary"><i class="uil uil-pen"></i></a>
+                                                    @if (item.Status == "todo1")
+                                                    {
+                                                    <a href="IssueSettingController?service=changeProjectSettingStatus&settingId=${ls.setting_id}&projectID=${ls.project_id}&mode=project&isActive=1"
+                                                            class="btn btn-icon btn-pills btn-soft-danger" title="In active the project setting"> <i class="uil uil-times icons"></i></a>
+                                                    }                        
+                                                    else
+                                                    {
+                                                        <a href="IssueSettingController?service=changeProjectSettingStatus&settingId=${ls.setting_id}&projectID=${ls.project_id}&mode=project&isActive=0"
+                                                           class="btn btn-icon btn-pills btn-soft-success" title="Active the project setting">
+                                                            <i class="uil uil-check icons"></i>
+                                                        </a>
+                                                    }
+                                            </tr>
+                                        }
+                                        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

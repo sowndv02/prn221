@@ -5,7 +5,7 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
+@* 
 <h1>Edit</h1>
 
 <h4>Subject</h4>
@@ -79,7 +79,121 @@
 
 <div>
     <a asp-page="./Index">Back to List</a>
+</div> *@
+
+
+<style>
+    #toast {
+        display: none;
+        position: fixed;
+        top: 150px;
+        right: 60px;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+    }
+</style>
+
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
 </div>
+<!-- Loader -->
+
+
+<div class="container-fluid" style="max-width: 850px">
+                    <div class="layout-specing">
+                        <div style="border-radius: 7px" class="container mt-4 bg-white shadow">
+                            <h1 class="mb-4">Edit Subject</h1>
+                            @* <div class="alert alert-danger">
+                            </div> *@
+                            <script type="text/javascript">
+                                function displayToast(message, isSuccess) {
+                                    var toast = document.getElementById("toast");
+                                    toast.innerHTML = message;
+                                    if (isSuccess) {
+                                        toast.style.backgroundColor = "#4CAF50";  // Green color for success
+                                    } else {
+                                        toast.style.backgroundColor = "#F44336";  // Red color for failure
+                                    }
+                                    toast.style.display = "block";
+                                    setTimeout(function () {
+                                        toast.style.display = "none";
+                                    }, 3000);  // Display the toast for 3 seconds
+                                }
+                            </script>
+
+                            <div id="toast"></div>
+
+                            <script type="text/javascript">
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    var urlParams = new URLSearchParams(window.location.search);
+                                    var isSuccess = urlParams.get("success");
+                                    if (isSuccess === "true") {
+                                        displayToast("updated successfully!", true);
+                                    } else if (isSuccess === "false") {
+                                        displayToast("Failed to update!", false);
+                                    }
+                                });
+                            </script>
+                            <form method="post">
+                                <div class="mb-3">
+                                    <input type="hidden" asp-for="Subject.SubjectId" value="@Model.Subject.SubjectId" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject_name" class="form-label">Subject Code<span class="text-danger"> *</span></label>
+                                    <input type="text" class="form-control" id="subject_name" asp-for="Subject.SubjectCode" value="@Model.Subject.SubjectCode" required>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="subject_code" class="form-label">Subject Name<span class="text-danger"> *</span></label>
+                                        <input type="text" class="form-control" id="subject_code" asp-for="Subject.SubjectName" value="@Model.Subject.SubjectName" required>
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="manager" class="form-label">Manager<span class="text-danger"> *</span></label>
+                                        <select asp-for="Subject.ManagerId" asp-items="Model.ManagerList" class="form-select" id="manager"></select>
+                                    </div>
+
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="pass_grade" class="form-label">Pass grade<span class="text-danger"> *</span></label>
+                                        <input type="text" class="form-control" id="pass_grade" asp-for="Subject.PassGrade" value="@Model.Subject.PassGrade" required>
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="time_allocation" class="form-label">Time allocation<span class="text-danger"> *</span></label>
+                                        <input type="text" class="form-control" id="time_allocation" asp-for="Subject.TimeAllocation" value="@Model.Subject.TimeAllocation" required>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="status">Status:</label>
+                                    <select asp-for="Subject.IsActive" asp-items="Model.ActiveList" class="form-select" id="status"></select>
+                                </div>
+                                <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Description of setting</label>
+                                                <textarea asp-for="Subject.Description" id="Description" rows="3" class="form-control" value="${listSubject.description}">${listSubject.description}</textarea>
+                                            </div>
+                                        </div>
+                                <button style="margin-bottom: 20px" type="submit" name="submit" class="btn btn-primary" value="">Save change</button>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

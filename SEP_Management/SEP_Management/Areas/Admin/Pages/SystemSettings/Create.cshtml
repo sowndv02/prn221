@@ -1,0 +1,117 @@
+﻿@page
+@model SEP_Management.Areas.Admin.Pages.Roles.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@* <h1>Create</h1>
+
+<h4>Role</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Role.Name" class="control-label"></label>
+                <input asp-for="Role.Name" class="form-control" />
+                <span asp-validation-for="Role.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role.Group" class="control-label"></label>
+                <select asp-for="Role.Group" asp-items="@ViewBag.settingGroupValues" class="form-control"></select>
+                <span asp-validation-for="Role.Group" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role.IsActive" class="control-label"></label>
+                <select asp-for="Role.IsActive" asp-items="@ViewBag.ActiveList" class="form-control"></select>
+                <span asp-validation-for="Role.IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role.Description" class="control-label"></label>
+                <textarea asp-for="Role.Description" class="form-control" ></textarea>
+                <span asp-validation-for="Role.Description" class="text-danger"></span>
+            </div>
+            
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div> *@
+
+
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- BODY -->
+<div class="container-fluid">
+    <div class="layout-specing">
+        <div class="row mb-3">
+            <div class="col-xl-9 col-md-6">
+                <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+                    <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                        <li class="breadcrumb-item"><a asp-page="Index">Manage System Setting</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add new System </li>
+                    </ul>
+                </nav>
+            </div><!--end col-->
+        </div>
+        <div class="row">
+            <div class="bg-white component-wrapper border-0 rounded shadow">
+                <div class="p-4 border-bottom">
+                    <h5 class="mb-0">Add new System Setting</h5>
+                </div>
+                <div class="p-4">
+                    <div class="row">
+                        <form method="post">
+                            @* <div class="alert alert-danger" role="alert">
+                            </div> *@
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="Setting_Group" class="form-label">Setting Group <span class="text-danger"> *</span></label>
+                                    <select asp-for="Role.Group" asp-items="@ViewBag.settingGroupValues" id="Setting_Group" class="form-control"></select>
+                                    <span asp-validation-for="Role.Group" class="text-danger"></span>
+                                </div>
+                                <div class="col">
+                                    <label for="Setting_Name" class="form-label">Setting Name<span class="text-danger"> *</span> </label>
+                                    <input asp-for="Role.Name" class="form-control" required />
+                                    <span asp-validation-for="Role.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label asp-for="Role.Description" class="control-label"></label>
+                                    <textarea asp-for="Role.Description" class="form-control"></textarea>
+                                    <span asp-validation-for="Role.Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary">Save change</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

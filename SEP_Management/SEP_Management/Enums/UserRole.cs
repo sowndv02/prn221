@@ -2,10 +2,10 @@
 {
     public enum UserRole
     {
-        ADMIN = 14,
-        SUBJECT_MANAGER = 15,
-        CLASS_MANAGER = 16,
-        PROJECT_MENTOR = 18,
-        STUDENT = 19
+        ADMIN = 3,
+        SUBJECT_MANAGER = 4,
+        CLASS_MANAGER = 6,
+        PROJECT_MENTOR = 5,
+        STUDENT = 7
     }
 }

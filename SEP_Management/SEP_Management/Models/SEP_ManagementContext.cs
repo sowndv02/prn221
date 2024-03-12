@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SEP_Management.Models
 {
-    public partial class SEP_ManagementContext : IdentityDbContext<User>
+    public partial class SEP_ManagementContext : IdentityDbContext<User, Role, string>
     {
         public SEP_ManagementContext()
         {
@@ -28,9 +24,8 @@ namespace SEP_Management.Models
         public virtual DbSet<Project> Projects { get; set; } = null!;
         public virtual DbSet<Subject> Subjects { get; set; } = null!;
         public virtual DbSet<SubjectSetting> SubjectSettings { get; set; } = null!;
-        public virtual DbSet<SystemSetting> SystemSettings { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
-
+        public virtual DbSet<Role> Roles { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -98,16 +93,21 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy)
+                    .IsRequired(false)
+                    .HasColumnName("created_by");
 
                 entity.Property(e => e.DueDate)
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("due_date");
 
-                entity.Property(e => e.IsActive).HasColumnName("is_active");
+                entity.Property(e => e.IsActive)
+                    .IsRequired(false)
+                    .HasColumnName("is_active");
 
                 entity.Property(e => e.Part)
                     .HasMaxLength(50)
@@ -118,9 +118,12 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy)
+                    .IsRequired(false)
+                    .HasColumnName("updated_by");
 
                 entity.Property(e => e.Weight)
                     .HasMaxLength(50)
@@ -143,41 +146,47 @@ namespace SEP_Management.Models
                 entity.Property(e => e.AccessToken)
                     .HasMaxLength(100)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("access_token");
 
                 entity.Property(e => e.ClassCode)
                     .HasMaxLength(50)
+                    .IsRequired(false)
                     .IsUnicode(false)
                     .HasColumnName("class_code");
 
                 entity.Property(e => e.ClassDetails)
                     .HasColumnType("text")
+                    .IsRequired(false)
                     .HasColumnName("class_details");
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.GitlabId)
                     .HasMaxLength(150)
+                    .IsRequired(false)
                     .IsUnicode(false)
                     .HasColumnName("gitlab_id");
 
-                entity.Property(e => e.ManagerId).HasColumnName("manager_id");
+                entity.Property(e => e.ManagerId).IsRequired(false).HasColumnName("manager_id");
 
-                entity.Property(e => e.SemesterId).HasColumnName("semester_id");
+                entity.Property(e => e.SemesterId).IsRequired(false).HasColumnName("semester_id");
 
-                entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.Status).IsRequired(false).HasColumnName("status");
 
-                entity.Property(e => e.SubjectId).HasColumnName("subject_id");
+                entity.Property(e => e.SubjectId).IsRequired(false).HasColumnName("subject_id");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
             });
 
             modelBuilder.Entity<ClassStudent>(entity =>
@@ -194,7 +203,7 @@ namespace SEP_Management.Models
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.IsActive).HasColumnName("is_active");
 
@@ -202,6 +211,7 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.Note)
                     .HasColumnType("text")
+                    .IsRequired(false)
                     .HasColumnName("note");
 
                 entity.Property(e => e.ProjectId).HasColumnName("project_id");
@@ -210,9 +220,10 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.ClassStudents)
@@ -235,25 +246,27 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
-                entity.Property(e => e.MilestoneId).HasColumnName("milestone_id");
+                entity.Property(e => e.MilestoneId).IsRequired(false).HasColumnName("milestone_id");
 
-                entity.Property(e => e.ProcessId).HasColumnName("process_id");
+                entity.Property(e => e.ProcessId).IsRequired(false).HasColumnName("process_id");
 
-                entity.Property(e => e.ProjectId).HasColumnName("project_id");
+                entity.Property(e => e.ProjectId).IsRequired(false).HasColumnName("project_id");
 
-                entity.Property(e => e.StatusId).HasColumnName("status_id");
+                entity.Property(e => e.StatusId).IsRequired(false).HasColumnName("status_id");
 
-                entity.Property(e => e.TypeId).HasColumnName("type_id");
+                entity.Property(e => e.TypeId).IsRequired(false).HasColumnName("type_id");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Milestone)
                     .WithMany(p => p.Issues)
@@ -279,39 +292,44 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.SettingId).HasColumnName("setting_id");
 
-                entity.Property(e => e.ClassId).HasColumnName("class_id");
+                entity.Property(e => e.ClassId).IsRequired(false).HasColumnName("class_id");
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.Description)
                     .HasColumnType("text")
+                    .IsRequired(false)
                     .HasColumnName("description");
 
-                entity.Property(e => e.IsActive).HasColumnName("is_active");
+                entity.Property(e => e.IsActive).IsRequired(false).HasColumnName("is_active");
 
-                entity.Property(e => e.ProjectId).HasColumnName("project_id");
+                entity.Property(e => e.ProjectId).IsRequired(false).HasColumnName("project_id");
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(50)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("status");
 
-                entity.Property(e => e.SubjectId).HasColumnName("subject_id");
+                entity.Property(e => e.SubjectId).IsRequired(false).HasColumnName("subject_id");
 
                 entity.Property(e => e.Title)
                     .HasMaxLength(50)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("title");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.IssueSettings)
@@ -339,23 +357,26 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
 
                 entity.Property(e => e.Description)
                     .HasColumnType("text")
+                    .IsRequired(false)
                     .HasColumnName("description");
 
-                entity.Property(e => e.IssueId).HasColumnName("issue_id");
+                entity.Property(e => e.IssueId).IsRequired(false).HasColumnName("issue_id");
 
-                entity.Property(e => e.MilestoneId).HasColumnName("milestone_id");
+                entity.Property(e => e.MilestoneId).IsRequired(false).HasColumnName("milestone_id");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Issue)
                     .WithMany(p => p.IssueUpdates)
@@ -369,45 +390,52 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.MilestoneId).HasColumnName("milestone_id");
 
-                entity.Property(e => e.ClassId).HasColumnName("class_id");
+                entity.Property(e => e.ClassId).IsRequired(false).HasColumnName("class_id");
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.Description)
                     .HasColumnType("text")
+                    .IsRequired(false)
                     .HasColumnName("description");
 
                 entity.Property(e => e.DueDate)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("due_date");
 
                 entity.Property(e => e.GitlabId)
                     .HasMaxLength(50)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("gitlab_id");
 
-                entity.Property(e => e.IsActive).HasColumnName("is_active");
+                entity.Property(e => e.IsActive).IsRequired(false).HasColumnName("is_active");
 
-                entity.Property(e => e.MinestoneName)
+                entity.Property(e => e.MilestoneName)
                     .HasMaxLength(100)
                     .IsUnicode(false)
-                    .HasColumnName("minestone_name");
+                    .IsRequired(false)
+                    .HasColumnName("milestone_name");
 
-                entity.Property(e => e.ProjectId).HasColumnName("project_id");
+                entity.Property(e => e.ProjectId).IsRequired(false).HasColumnName("project_id");
 
                 entity.Property(e => e.StartDate)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("start_date");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Class)
                     .WithMany(p => p.Milestones)
@@ -429,55 +457,64 @@ namespace SEP_Management.Models
                 entity.Property(e => e.AccessToken)
                     .HasMaxLength(100)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("access_token");
 
-                entity.Property(e => e.ClassId).HasColumnName("class_id");
+                entity.Property(e => e.ClassId).IsRequired(false).HasColumnName("class_id");
 
-                entity.Property(e => e.CoMentorId).HasColumnName("co_mentor_id");
+                entity.Property(e => e.CoMentorId).IsRequired(false).HasColumnName("co_mentor_id");
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.GroupName)
                     .HasMaxLength(50)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("group_name");
 
-                entity.Property(e => e.MentorId).HasColumnName("mentor_id");
+                entity.Property(e => e.MentorId).IsRequired(false).HasColumnName("mentor_id");
 
                 entity.Property(e => e.ProjectCode)
                     .HasMaxLength(50)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("project_code");
 
                 entity.Property(e => e.ProjectDescription)
                     .HasColumnType("text")
+                    .IsRequired(false)
                     .HasColumnName("project_description");
 
                 entity.Property(e => e.ProjectEnName)
                     .HasMaxLength(200)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("project_en_name");
 
                 entity.Property(e => e.ProjectVieName)
                     .HasMaxLength(200)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("project_vie_name");
 
-                entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.Status).IsRequired(false).HasColumnName("status");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.Property(e => e.Url)
                     .HasMaxLength(255)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("url");
 
                 entity.HasOne(d => d.Class)
@@ -494,15 +531,16 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.Description)
                     .HasColumnType("text")
                     .HasColumnName("description");
 
-                entity.Property(e => e.IsActive).HasColumnName("is_active");
+                entity.Property(e => e.IsActive).IsRequired(false).HasColumnName("is_active");
 
                 entity.Property(e => e.ManagerId).HasColumnName("manager_id");
 
@@ -525,9 +563,10 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Manager)
                     .WithMany(p => p.Subjects)
@@ -546,67 +585,34 @@ namespace SEP_Management.Models
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedBy).IsRequired(false).HasColumnName("created_by");
 
                 entity.Property(e => e.SettingName)
                     .HasMaxLength(50)
                     .IsUnicode(false)
+                    .IsRequired(false)
                     .HasColumnName("setting_name");
 
-                entity.Property(e => e.SettingType).HasColumnName("setting_type");
+                entity.Property(e => e.SettingType).IsRequired(false).HasColumnName("setting_type");
 
-                entity.Property(e => e.SettingValue).HasColumnName("setting_value");
+                entity.Property(e => e.SettingValue).IsRequired(false).HasColumnName("setting_value");
 
-                entity.Property(e => e.SubjectId).HasColumnName("subject_id");
+                entity.Property(e => e.SubjectId).IsRequired(false).HasColumnName("subject_id");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
+                    .IsRequired(false)
                     .HasColumnName("updated_at");
 
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
+                entity.Property(e => e.UpdatedBy).IsRequired(false).HasColumnName("updated_by");
 
                 entity.HasOne(d => d.Subject)
                     .WithMany(p => p.SubjectSettings)
                     .HasForeignKey(d => d.SubjectId)
                     .HasConstraintName("FK_subject_setting_subject");
-            });
-
-            modelBuilder.Entity<SystemSetting>(entity =>
-            {
-                entity.HasKey(e => e.SettingId);
-
-                entity.ToTable("system_setting");
-
-                entity.Property(e => e.SettingId).HasColumnName("setting_id");
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasColumnName("created_at");
-
-                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-
-                entity.Property(e => e.Description)
-                    .HasColumnType("text")
-                    .HasColumnName("description");
-
-                entity.Property(e => e.DisplayOrder).HasColumnName("display_order");
-
-                entity.Property(e => e.IsActive).HasColumnName("is_active");
-
-                entity.Property(e => e.SettingGroup).HasColumnName("setting_group");
-
-                entity.Property(e => e.SettingName)
-                    .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("setting_name");
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("datetime")
-                    .HasColumnName("updated_at");
-
-                entity.Property(e => e.UpdatedBy).HasColumnName("updated_by");
             });
 
             base.OnModelCreating(modelBuilder);

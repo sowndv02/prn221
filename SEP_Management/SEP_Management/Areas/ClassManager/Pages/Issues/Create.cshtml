@@ -1,0 +1,72 @@
+﻿@page
+@model SEP_Management.Areas.ClassManager.Pages.Issues.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Issue</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Issue.ProjectId" class="control-label"></label>
+                <select asp-for="Issue.ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.MilestoneId" class="control-label"></label>
+                <select asp-for="Issue.MilestoneId" class ="form-control" asp-items="ViewBag.MilestoneId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.TypeId" class="control-label"></label>
+                <select asp-for="Issue.TypeId" class ="form-control" asp-items="ViewBag.TypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.StatusId" class="control-label"></label>
+                <input asp-for="Issue.StatusId" class="form-control" />
+                <span asp-validation-for="Issue.StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.ProcessId" class="control-label"></label>
+                <input asp-for="Issue.ProcessId" class="form-control" />
+                <span asp-validation-for="Issue.ProcessId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.CreatedBy" class="control-label"></label>
+                <input asp-for="Issue.CreatedBy" class="form-control" />
+                <span asp-validation-for="Issue.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.CreatedAt" class="control-label"></label>
+                <input asp-for="Issue.CreatedAt" class="form-control" />
+                <span asp-validation-for="Issue.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.UpdatedBy" class="control-label"></label>
+                <input asp-for="Issue.UpdatedBy" class="form-control" />
+                <span asp-validation-for="Issue.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.UpdatedAt" class="control-label"></label>
+                <input asp-for="Issue.UpdatedAt" class="form-control" />
+                <span asp-validation-for="Issue.UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

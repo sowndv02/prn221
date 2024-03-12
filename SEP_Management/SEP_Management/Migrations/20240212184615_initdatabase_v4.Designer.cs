@@ -619,7 +619,7 @@ namespace SEP_Management.Migrations
                         .HasColumnType("tinyint")
                         .HasColumnName("is_active");
 
-                    b.Property<string>("MinestoneName")
+                    b.Property<string>("MilestoneName")
                         .HasMaxLength(100)
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)")

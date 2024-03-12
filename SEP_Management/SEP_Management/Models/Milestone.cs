@@ -10,7 +10,7 @@ namespace SEP_Management.Models
             Issues = new HashSet<Issue>();
         }
         public int MilestoneId { get; set; }
-        public string? MinestoneName { get; set; }
+        public string? MilestoneName { get; set; }
         public string? Description { get; set; }
         public DateTime? DueDate { get; set; }
         public byte? IsActive { get; set; }

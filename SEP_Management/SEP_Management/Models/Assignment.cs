@@ -14,11 +14,11 @@ namespace SEP_Management.Models
         public int SubjectId { get; set; }
         public string AssignName { get; set; } = null!;
         public string AssignDescription { get; set; } = null!;
-        public byte IsActive { get; set; }
-        public int CreatedBy { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public short UpdatedBy { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public byte? IsActive { get; set; }
+        public int? CreatedBy { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public short? UpdatedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public string Part { get; set; } = null!;
         public string Weight { get; set; } = null!;
         public string DueDate { get; set; } = null!;
